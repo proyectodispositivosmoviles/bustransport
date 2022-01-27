@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">bustransport</string>
     <string name="register_trip">Registro de Viaje</string>
+    <string name="email">Correo electrónico</string>
+    <string name="password">Contraseña</string>
+    <string name="sing_in">Iniciar Sesión</string>
+    <string name="does_not_have_account"><b>¡No tienes cuenta Registrate!</b></string>
+    <string name="repeat_password">Repita la contraseña</string>
+    <string name="register">Registrar</string>
+    <string name="sign_out">Cerrar sesión</string>
+    <string name="name">Nombres y Apellidos</string>
+    <string name="phone">Celular</string>
 </resources>
