@@ -5,9 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.ricaurte.bustransport.databinding.ActivityLoginBinding
-//yuly es una loca
+
 class LoginActivity : AppCompatActivity() {
-// si es verdad yuly es loca
+
     private lateinit var loginBinding: ActivityLoginBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,6 +37,8 @@ class LoginActivity : AppCompatActivity() {
                 if (email == emailReceived && password == passwordReceived && email.isNotEmpty() && password.isNotEmpty()){
                     val intent = Intent(this@LoginActivity, MainActivity::class.java)
                     intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK  or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                    intent.putExtra("email",emailReceived)
+                    intent.putExtra("password", passwordReceived)
                     startActivity(intent)
                 } else {
                     Toast.makeText(this@LoginActivity,"Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show()
