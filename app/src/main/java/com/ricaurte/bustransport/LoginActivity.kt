@@ -7,7 +7,7 @@ import android.widget.Toast
 import com.ricaurte.bustransport.databinding.ActivityLoginBinding
 //yuly es una loca
 class LoginActivity : AppCompatActivity() {
-
+// si es verdad yuly es loca
     private lateinit var loginBinding: ActivityLoginBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
