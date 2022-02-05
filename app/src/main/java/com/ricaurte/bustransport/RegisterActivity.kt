@@ -1,9 +1,9 @@
 package com.ricaurte.bustransport
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.util.PatternsCompat
 import com.ricaurte.bustransport.databinding.ActivityRegisterBinding
 
@@ -11,11 +11,8 @@ import com.ricaurte.bustransport.databinding.ActivityRegisterBinding
 class RegisterActivity : AppCompatActivity() {
     private lateinit var registerBinding: ActivityRegisterBinding
 
-    fun validarCorreo(email_: String): Boolean {
-        if (PatternsCompat.EMAIL_ADDRESS.matcher(email_).matches()) {
-            return true
-        } else
-            return false
+    private fun validarCorreo(email_: String): Boolean {
+        return PatternsCompat.EMAIL_ADDRESS.matcher(email_).matches()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,26 +25,33 @@ class RegisterActivity : AppCompatActivity() {
                 val email = emailEditText.text.toString()
                 val password = passwordEditText.text.toString()
                 val repPassword = repPasswordEditText.text.toString()
-                val valido=validarCorreo(email)
-                if(valido==true){
-                    if (password.length>5){
-                        if (password == repPassword){
+                val valido = validarCorreo(email)
+                if (valido) {
+                    if (password.length > 5) {
+                        if (password == repPassword) {
                             val intent = Intent(this@RegisterActivity, LoginActivity::class.java)
-                            intent.putExtra("email",email)
+                            intent.putExtra("email", email)
                             intent.putExtra("password", password)
                             startActivity(intent)
                         } else
-                            Toast.makeText(applicationContext,"Las contraseñas deben iguales", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(
+                                applicationContext,
+                                "Las contraseñas deben iguales",
+                                Toast.LENGTH_SHORT
+                            ).show()
+
+                    } else {
+                        Toast.makeText(
+                            applicationContext,
+                            "La Contraseña Debe Contener Mínimo 6 Dígitos",
+                            Toast.LENGTH_SHORT
+                        ).show()
 
                     }
-                    else{
-                        Toast.makeText(applicationContext,"La Contraseña Debe Contener Mínimo 6 Dígitos", Toast.LENGTH_SHORT).show()
 
-                    }
-
-                }
-                else{
-                    Toast.makeText(applicationContext,"Correo No Válido", Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(applicationContext, "Correo No Válido", Toast.LENGTH_SHORT)
+                        .show()
                 }
 
 
