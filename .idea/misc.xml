@@ -4,6 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/fernando/AndroidStudioProjects/bustransport/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/juans/AndroidStudioProjects/bustransport/app/src/main/res/layout/activity_login.xml" value="0.2" />
+        <entry key="..\:/Users/juans/AndroidStudioProjects/bustransport/app/src/main/res/layout/activity_main.xml" value="0.4" />
+        <entry key="..\:/Users/juans/AndroidStudioProjects/bustransport/app/src/main/res/layout/activity_register.xml" value="0.1" />
+        <entry key="..\:/Users/juans/AndroidStudioProjects/bustransport/app/src/main/res/layout/activity_splash.xml" value="0.1" />
       </map>
     </option>
   </component>
