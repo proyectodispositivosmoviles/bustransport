@@ -10,4 +10,6 @@
     <string name="sign_out">Cerrar sesión</string>
     <string name="name">Nombres y Apellidos</string>
     <string name="phone">Celular</string>
+    <string name="email_text_view">correo</string>
+    <string name="autenticado">autenticado</string>
 </resources>

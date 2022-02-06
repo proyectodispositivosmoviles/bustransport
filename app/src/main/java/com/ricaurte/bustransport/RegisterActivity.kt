@@ -11,11 +11,8 @@ import com.ricaurte.bustransport.databinding.ActivityRegisterBinding
 class RegisterActivity : AppCompatActivity() {
     private lateinit var registerBinding: ActivityRegisterBinding
 
-    fun validarCorreo(email_: String): Boolean {
-        if (PatternsCompat.EMAIL_ADDRESS.matcher(email_).matches()) {
-            return true
-        } else
-            return false
+    private fun validarCorreo(email_: String): Boolean {
+        return PatternsCompat.EMAIL_ADDRESS.matcher(email_).matches()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,7 +26,7 @@ class RegisterActivity : AppCompatActivity() {
                 val password = passwordEditText.text.toString()
                 val repPassword = repPasswordEditText.text.toString()
                 val valido=validarCorreo(email)
-                if(valido==true){
+                if(valido){
                     if (password.length>5){
                         if (password == repPassword){
                             val intent = Intent(this@RegisterActivity, LoginActivity::class.java)
