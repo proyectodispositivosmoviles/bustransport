@@ -1,4 +1,4 @@
-package com.ricaurte.bustransport
+package com.ricaurte.bustransport.ui.main
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,7 +6,9 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.ricaurte.bustransport.R
 import com.ricaurte.bustransport.databinding.ActivityMainBinding
+import com.ricaurte.bustransport.ui.login.LoginActivity
 
 class MainActivity : AppCompatActivity() {
 

@@ -1,4 +1,4 @@
-package com.ricaurte.bustransport
+package com.ricaurte.bustransport.ui.register
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.core.util.PatternsCompat
 import com.ricaurte.bustransport.databinding.ActivityRegisterBinding
+import com.ricaurte.bustransport.ui.login.LoginActivity
 
 
 class RegisterActivity : AppCompatActivity() {
