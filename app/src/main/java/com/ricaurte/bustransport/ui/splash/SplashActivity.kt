@@ -1,10 +1,11 @@
-package com.ricaurte.bustransport
+package com.ricaurte.bustransport.ui.splash
 
 import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.ricaurte.bustransport.databinding.ActivitySplashBinding
+import com.ricaurte.bustransport.ui.login.LoginActivity
 import java.util.*
 import kotlin.concurrent.timerTask
 
