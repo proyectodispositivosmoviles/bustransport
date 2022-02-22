@@ -1,12 +1,13 @@
-package com.ricaurte.bustransport
+package com.ricaurte.bustransport.ui.main
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.ricaurte.bustransport.R
 import com.ricaurte.bustransport.databinding.ActivityMainBinding
+import com.ricaurte.bustransport.ui.login.LoginActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,12 +27,10 @@ class MainActivity : AppCompatActivity() {
             credentials.getString("email").also { emailReceived = it }
             credentials.getString("password").also { passwordReceived = it }
         }
-        val userLogged: TextView = findViewById(R.id.log_text_view)
-        "autenticado: $emailReceived".also { userLogged.text = it }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu_overflow, menu)
+        menuInflater.inflate(R.menu.overflow_menu, menu)
         return true
     }
 

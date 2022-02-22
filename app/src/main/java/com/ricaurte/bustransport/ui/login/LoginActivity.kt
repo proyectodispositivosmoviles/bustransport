@@ -1,9 +1,11 @@
-package com.ricaurte.bustransport
+package com.ricaurte.bustransport.ui.login
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.ricaurte.bustransport.ui.main.MainActivity
+import com.ricaurte.bustransport.ui.register.RegisterActivity
 import com.ricaurte.bustransport.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
