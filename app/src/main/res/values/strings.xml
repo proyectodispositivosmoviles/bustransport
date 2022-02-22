@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">bustransport</string>
-    <string name="register_trip">Registro de Viaje</string>
+    <string name="seleccion_trip">Registro de Viaje</string>
     <string name="email">Correo electrónico</string>
     <string name="password">Contraseña</string>
     <string name="sing_in">Iniciar Sesión</string>
@@ -16,4 +16,22 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="medell_n_santa_b_rbara">Medellín - Santa Bárbara</string>
+    <string name="santaBarbara_medellin">Santa Bárbara - Medellín</string>
+    <string name="Medellín_SantaBarbara">medellin_santabarbara</string>
+    <string name="ruta_de_viaje">Elije tu viaje</string>
+    <string name="msg_Siguiente">Siguiente</string>
+    <string name="santa_med">Santa Bárbara - Medellin</string>
+    <string name="medellin_santa">Medellín - Santa Bárbara</string>
+    <string name="Seleccion_trip">Elige tu viaje</string>
+    <string name="rut">Ruta</string>
+    <string name="elije_tuviaje">Elije Tu Viaje</string>
+    <string name="schedule">Horario</string>
+    <string name="Spiner7">10:00 AM</string>
+    <string name="Spinner7">Spinner7</string>
+    <string name="Cantidad_asientos">Cantidad de Asientos</string>
+    <string name="regresar_botton">Regresar</string>
+    <string name="continue_button">Continuar</string>
 </resources>
