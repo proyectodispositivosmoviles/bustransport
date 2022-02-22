@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_mobile"
+    app:startDestination="@id/reserve_Fragment2">
+    <fragment
+        android:id="@+id/reserve_Fragment2"
+        android:name="com.ricaurte.bustransport.ui.reserve.Reserve_Fragment"
+        android:label="@string/title_tickets"
+        tools:layout="@layout/fragment_reserve" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.ricaurte.bustransport.ui.profile.ProfileFragment"
+        android:label="@string/title_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/currenttripFragment"
+        android:name="com.ricaurte.bustransport.ui.currenttrip.CurrenttripFragment"
+        android:label="@string/title_reservation"
+        tools:layout="@layout/fragment_currenttrip" />
+</navigation>

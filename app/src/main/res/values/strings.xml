@@ -12,4 +12,8 @@
     <string name="phone">Celular</string>
     <string name="email_text_view">correo</string>
     <string name="autenticado">autenticado</string>
+    <string name="title_activity_bottom">BottomActivity</string>
+    <string name="title_tickets">Tiquetes</string>
+    <string name="title_reservation">Mi Reserva</string>
+    <string name="title_profile">Perfil</string>
 </resources>
