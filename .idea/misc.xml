@@ -9,10 +9,17 @@
         <entry key="..\:/Users/HP/AndroidStudioProjects/bustransport/app/src/main/res/layout/activity_register.xml" value="0.2" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/bustransport/app/src/main/res/layout/activity_splash.xml" value="0.2" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/bustransport/app/src/main/res/layout/fragment_blank.xml" value="0.25" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/bustransport/app/src/main/res/layout/fragment_blank2.xml" value="0.2" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/bustransport/app/src/main/res/layout/fragment_create.xml" value="0.11141304347826086" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/bustransport/app/src/main/res/layout/fragment_currenttrip.xml" value="0.2" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/bustransport/app/src/main/res/layout/fragment_dashboard.xml" value="0.2" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/bustransport/app/src/main/res/layout/fragment_home.xml" value="0.2" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/bustransport/app/src/main/res/layout/fragment_notifications.xml" value="0.2" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/bustransport/app/src/main/res/layout/fragment_triplist.xml" value="0.25" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/bustransport/app/src/main/res/layout/pay_confirmation_fragment.xml" value="0.2" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/bustransport/app/src/main/res/layout/pse_pay_fragment.xml" value="0.23541666666666666" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/bustransport/app/src/main/res/layout/register_term_fragment.xml" value="0.1" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/bustransport/app/src/main/res/layout/updatecount_fragment.xml" value="0.2" />
         <entry key="..\:/Users/fernando/AndroidStudioProjects/bustransport/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/juans/AndroidStudioProjects/bustransport/app/src/main/res/layout/activity_login.xml" value="0.2" />
         <entry key="..\:/Users/juans/AndroidStudioProjects/bustransport/app/src/main/res/layout/activity_main.xml" value="0.4" />

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.payconfirmation.PayConfirmationFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/valueTextInputText"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textAlignment="center">
+
+        <EditText
+            android:id="@+id/rutareservaMultiLine"
+            android:layout_width="329dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="36dp"
+            android:layout_marginBottom="560dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:gravity="start|top"
+            android:inputType="textMultiLine"
+            android:text="@string/reserve"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.512"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sucessful_pay_textView" />
+
+        <EditText
+            android:id="@+id/seating_rutareservaMultiLine3"
+            android:layout_width="327dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="36dp"
+            android:layout_marginBottom="496dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:gravity="start|top"
+            android:inputType="textMultiLine"
+            android:text="@string/seating"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sucessful_pay_textView" />
+
+        <TextView
+            android:id="@+id/reservaTextView2"
+            style="@style/TextViewTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="146dp"
+            android:layout_marginTop="36dp"
+            android:layout_marginEnd="16dp"
+            android:editable="true"
+            android:minHeight="48dp"
+            android:text="@string/reserva"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/Returnbutton3"
+            android:layout_width="148dp"
+            android:layout_height="49dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginBottom="68dp"
+            android:text="@string/toreturn"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/Continuebutton3"
+            android:layout_width="134dp"
+            android:layout_height="52dp"
+            android:layout_marginBottom="64dp"
+            android:text="@string/Continue"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.516"
+            app:layout_constraintStart_toEndOf="@+id/Returnbutton3" />
+
+        <EditText
+            android:id="@+id/Value_editTextTextMultiLine3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="start|top"
+            android:inputType="textMultiLine"
+            android:minHeight="48dp"
+            android:text="@string/Price2"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/method_textView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Ubication_editTextTextMultiLine5"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <EditText
+            android:id="@+id/HoureditTextTextMultiLine4"
+            android:layout_width="227dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="16dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:gravity="start|top"
+            android:inputType="textMultiLine"
+            android:text="@string/hour"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.472"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/seating_rutareservaMultiLine3" />
+
+        <EditText
+            android:id="@+id/Ubication_editTextTextMultiLine5"
+            android:layout_width="367dp"
+            android:layout_height="59dp"
+            android:ems="10"
+            android:gravity="start|top"
+            android:inputType="textMultiLine"
+            android:text="@string/Ubication"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/method_textView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/HoureditTextTextMultiLine4"
+            app:layout_constraintVertical_bias="0.257" />
+
+        <TextView
+            android:id="@+id/method_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/method"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/imageView2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Value_editTextTextMultiLine3" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="246dp"
+            android:layout_height="115dp"
+            android:contentDescription="TODO"
+            android:src="@drawable/boton_pse"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Value_editTextTextMultiLine3"
+            app:layout_constraintVertical_bias="0.308" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
