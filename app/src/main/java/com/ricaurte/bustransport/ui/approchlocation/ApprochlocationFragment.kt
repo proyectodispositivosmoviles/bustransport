@@ -1,4 +1,4 @@
-package com.ricaurte.bustransport.ui.triplist
+package com.ricaurte.bustransport.ui.approchlocation
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -8,24 +8,24 @@ import android.view.View
 import android.view.ViewGroup
 import com.ricaurte.bustransport.R
 
-class TriplistFragment : Fragment() {
+class ApprochlocationFragment : Fragment() {
 
     companion object {
-        fun newInstance() = TriplistFragment()
+        fun newInstance() = ApprochlocationFragment()
     }
 
-    private lateinit var viewModel: TriplistViewModel
+    private lateinit var viewModel: ApprochlocationViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_triplist, container, false)
+        return inflater.inflate(R.layout.fragment_approchlocation, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(TriplistViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(ApprochlocationViewModel::class.java)
         // TODO: Use the ViewModel
     }
 

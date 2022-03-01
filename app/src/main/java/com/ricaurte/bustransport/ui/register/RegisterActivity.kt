@@ -24,8 +24,8 @@ class RegisterActivity : AppCompatActivity() {
         with(registerBinding) {
             registerButton.setOnClickListener {
                 val email = emailEditText.text.toString()
-                val password = passwordEditText.text.toString()
-                val repPassword = repPasswordEditText.text.toString()
+                val password = passwordUpdateEditText.text.toString()
+                val repPassword = repPasswordUpdateEditText.text.toString()
                 val valido=validarCorreo(email)
                 if(valido){
                     if (password.length>5){

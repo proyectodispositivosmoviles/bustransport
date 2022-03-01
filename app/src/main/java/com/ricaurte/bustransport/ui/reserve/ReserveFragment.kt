@@ -8,10 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 import com.ricaurte.bustransport.R
 
-class Reserve_Fragment : Fragment() {
+class ReserveFragment : Fragment() {
 
     companion object {
-        fun newInstance() = Reserve_Fragment()
+        fun newInstance() = ReserveFragment()
     }
 
     private lateinit var viewModel: ReserveViewModel

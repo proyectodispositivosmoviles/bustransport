@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.ricaurte.bustransport.databinding.ActivitySplashBinding
 import com.ricaurte.bustransport.ui.login.LoginActivity
+import com.ricaurte.bustransport.ui.main.MainActivity
 import java.util.*
 import kotlin.concurrent.timerTask
 

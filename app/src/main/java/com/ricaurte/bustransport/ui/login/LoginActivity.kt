@@ -7,6 +7,7 @@ import android.widget.Toast
 import com.ricaurte.bustransport.ui.main.MainActivity
 import com.ricaurte.bustransport.ui.register.RegisterActivity
 import com.ricaurte.bustransport.databinding.ActivityLoginBinding
+import com.ricaurte.bustransport.ui.bottom.BottomActivity
 
 class LoginActivity : AppCompatActivity() {
 
@@ -34,10 +35,10 @@ class LoginActivity : AppCompatActivity() {
         with(loginBinding){
             signInButton.setOnClickListener {
                 val email = emailEditText.text.toString()
-                val password = passwordEditText.text.toString()
+                val password = passwordUpdateEditText.text.toString()
 
                 if (email == emailReceived && password == passwordReceived && email.isNotEmpty() && password.isNotEmpty()){
-                    val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                    val intent = Intent(this@LoginActivity, BottomActivity::class.java)
                     intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK  or Intent.FLAG_ACTIVITY_CLEAR_TASK
                     intent.putExtra("email",emailReceived)
                     intent.putExtra("password", passwordReceived)
