@@ -10,7 +10,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView4"
-        android:name="com.ricaurte.bustransport.ui.reserve.Reserve_Fragment"
+        android:name="com.ricaurte.bustransport.ui.reserve.ReserveFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"

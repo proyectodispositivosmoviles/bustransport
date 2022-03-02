@@ -6,9 +6,13 @@
     app:startDestination="@id/reserve_Fragment2">
     <fragment
         android:id="@+id/reserve_Fragment2"
-        android:name="com.ricaurte.bustransport.ui.reserve.Reserve_Fragment"
+        android:name="com.ricaurte.bustransport.ui.reserve.ReserveFragment"
         android:label="@string/title_tickets"
-        tools:layout="@layout/fragment_reserve" />
+        tools:layout="@layout/fragment_reserve" >
+        <action
+            android:id="@+id/action_reserve_Fragment2_to_approchlocationFragment2"
+            app:destination="@id/approchlocationFragment" />
+    </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.ricaurte.bustransport.ui.profile.ProfileFragment"
@@ -19,4 +23,9 @@
         android:name="com.ricaurte.bustransport.ui.currenttrip.CurrenttripFragment"
         android:label="@string/title_reservation"
         tools:layout="@layout/fragment_currenttrip" />
+    <fragment
+        android:id="@+id/approchlocationFragment"
+        android:name="com.ricaurte.bustransport.ui.approchlocation.ApprochlocationFragment"
+        android:label="fragment_approchlocation"
+        tools:layout="@layout/fragment_approchlocation" />
 </navigation>
