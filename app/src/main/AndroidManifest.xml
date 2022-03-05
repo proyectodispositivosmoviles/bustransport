@@ -10,14 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Bustransport">
         <activity
+            android:name=".ui.registerterm.RegistertermActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.bottom.BottomActivity"
             android:exported="true"
-            android:label="@string/title_activity_bottom" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:label="@string/title_activity_bottom" />
         <activity
             android:name=".ui.register.RegisterActivity"
             android:exported="false" />
@@ -27,12 +25,13 @@
         <activity
             android:name=".ui.splash.SplashActivity"
             android:exported="true"
-            android:theme="@style/AppTheme.Splash"/>
+            android:theme="@style/AppTheme.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-
-        <activity
-            android:name=".ui.main.MainActivity"
-            android:exported="true" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
     </application>
 

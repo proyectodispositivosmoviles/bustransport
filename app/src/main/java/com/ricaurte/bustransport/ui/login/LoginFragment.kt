@@ -25,7 +25,7 @@ class LoginFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        loginBinding.registerTestView.setOnClickListener{
+        loginBinding.registerTextButton.setOnClickListener{
             //findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToRegisterFragment2())
         }
     }

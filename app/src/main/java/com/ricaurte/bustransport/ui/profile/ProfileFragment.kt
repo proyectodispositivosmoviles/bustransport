@@ -1,12 +1,13 @@
 package com.ricaurte.bustransport.ui.profile
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.ricaurte.bustransport.R
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
+import com.ricaurte.bustransport.databinding.FragmentProfileBinding
 
 class ProfileFragment : Fragment() {
 
@@ -15,12 +16,22 @@ class ProfileFragment : Fragment() {
     }
 
     private lateinit var viewModel: ProfileViewModel
+    private lateinit var profileBinder: FragmentProfileBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_profile, container, false)
+    ): View {
+        profileBinder = FragmentProfileBinding.inflate(inflater, container, false)
+        return profileBinder.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        profileBinder.changeAccountButton.setOnClickListener {
+            findNavController().navigate(ProfileFragmentDirections.actionProfileFragmentToUpdatecountFragment())
+        }
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

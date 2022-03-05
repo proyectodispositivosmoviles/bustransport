@@ -6,7 +6,7 @@
     <string name="sing_in">Iniciar Sesión</string>
     <string name="does_not_have_account"><b>¡No tienes cuenta Registrate!</b></string>
     <string name="repeat_password">Repita la contraseña</string>
-    <string name="register">Registrar</string>
+    <string name="register">Registrarme</string>
     <string name="sign_out">Cerrar sesión</string>
     <string name="name">Nombres y Apellidos</string>
     <string name="phone">Celular</string>
@@ -51,5 +51,9 @@
     <string name="successful_payment">¡TU PAGO SE REGISTRO \n CORRECTAMENTE!</string>
     <string name="successful_payment_two">Ten en cuenta que debes estar 10 \n minutos antes en el punto \n de abordaje</string>
     <string name="successful_payment_three">¡Muchas gracias por preferirnos!</string>
+    <string name="register_here">Regístrate aquí</string>
+    <string name="Register">REGISTRO</string>
+    <string name="terms_and_Conditions">Acepto Términos y Condiciones</string>
+    <string name="radio_button_empty" />
 
 </resources>

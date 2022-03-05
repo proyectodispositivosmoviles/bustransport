@@ -27,7 +27,7 @@ class LoginActivity : AppCompatActivity() {
             passwordReceived = credentials.getString("password")
         }
 
-        loginBinding.registerTestView.setOnClickListener{
+        loginBinding.registerTextButton.setOnClickListener{
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }

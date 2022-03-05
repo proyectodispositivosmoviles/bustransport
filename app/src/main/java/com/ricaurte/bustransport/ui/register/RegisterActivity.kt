@@ -6,7 +6,9 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.core.util.PatternsCompat
 import com.ricaurte.bustransport.databinding.ActivityRegisterBinding
+import com.ricaurte.bustransport.databinding.FragmentRegistertermBinding
 import com.ricaurte.bustransport.ui.login.LoginActivity
+import com.ricaurte.bustransport.ui.registerterm.RegistertermActivity
 
 
 class RegisterActivity : AppCompatActivity() {
@@ -20,6 +22,17 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         registerBinding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(registerBinding.root)
+
+        registerBinding.returnRegisterButton.setOnClickListener{
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
+
+        registerBinding.termsConditions2TextView.setOnClickListener{
+            val intent = Intent(this, RegistertermActivity::class.java)
+            startActivity(intent)
+        }
+
 
         with(registerBinding) {
             registerButton.setOnClickListener {

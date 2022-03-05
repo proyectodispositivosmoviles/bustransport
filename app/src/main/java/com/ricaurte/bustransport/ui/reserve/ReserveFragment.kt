@@ -1,12 +1,13 @@
 package com.ricaurte.bustransport.ui.reserve
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.ricaurte.bustransport.R
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
+import com.ricaurte.bustransport.databinding.FragmentReserveBinding
 
 class ReserveFragment : Fragment() {
 
@@ -15,10 +16,22 @@ class ReserveFragment : Fragment() {
     }
 
     private lateinit var viewModel: ReserveViewModel
+    private lateinit var reserveFragment: FragmentReserveBinding
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_reserve, container, false)
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        reserveFragment = FragmentReserveBinding.inflate(inflater, container, false)
+        return reserveFragment.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        reserveFragment.continueButton.setOnClickListener {
+            findNavController().navigate(ReserveFragmentDirections.actionReserveFragmentToApprochlocationFragment())
+        }
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
