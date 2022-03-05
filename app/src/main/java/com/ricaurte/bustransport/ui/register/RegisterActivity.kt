@@ -1,62 +1,80 @@
 package com.ricaurte.bustransport.ui.register
-
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
-import androidx.core.util.PatternsCompat
+import androidx.core.content.ContextCompat
+import androidx.lifecycle.ViewModelProvider
 import com.ricaurte.bustransport.databinding.ActivityRegisterBinding
+import com.ricaurte.bustransport.repository.UserRepository
 import com.ricaurte.bustransport.ui.login.LoginActivity
 
 
 class RegisterActivity : AppCompatActivity() {
     private lateinit var registerBinding: ActivityRegisterBinding
-
-    private fun validarCorreo(email_: String): Boolean {
-        return PatternsCompat.EMAIL_ADDRESS.matcher(email_).matches()
-    }
+    private lateinit var registerViewModel: RegisterViewModel
+    private var message = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         registerBinding = ActivityRegisterBinding.inflate(layoutInflater)
+        registerViewModel = ViewModelProvider(this)[RegisterViewModel::class.java]
         setContentView(registerBinding.root)
 
+        //aca es donde tengo el problema las dos
+        /*registerViewModel.dataValidated.observe(this) { result ->
+            onDataValidatedSubscribe(result)}
+
+            registerViewModel.msgDone.observe(this, { result ->
+                onMsgDoneSubscribe(result)
+        }*/
+
+
+
         with(registerBinding) {
+
             registerButton.setOnClickListener {
-                val email = emailEditText.text.toString()
-                val password = passwordUpdateEditText.text.toString()
-                val repPassword = repPasswordUpdateEditText.text.toString()
-                val valido=validarCorreo(email)
-                if(valido){
-                    if (password.length>5){
-                        if (password == repPassword){
-                            val intent = Intent(this@RegisterActivity, LoginActivity::class.java)
-                            intent.putExtra("email",email)
-                            intent.putExtra("password", password)
-                            startActivity(intent)
-                        } else
-                            Toast.makeText(applicationContext,"Las contraseñas deben iguales", Toast.LENGTH_SHORT).show()
+                registerViewModel.validatefiels(
 
-                    }
-                    else{
-                        Toast.makeText(applicationContext,"La Contraseña Debe Contener Mínimo 6 Dígitos", Toast.LENGTH_SHORT).show()
-
-                    }
-
-                }
-                else{
-                    Toast.makeText(applicationContext,"Correo No Válido", Toast.LENGTH_SHORT).show()
-                }
-
-
+                    nameUpdateEditText.text.toString(),
+                    phoneUpdateEditText.text.toString(),
+                    emailEditText.text.toString(),
+                    passwordUpdateEditText.text.toString(),
+                    repPasswordUpdateEditText.text.toString(),
+                )
+                Log.d("boton registrar","pase por el registrar")
             }
-        }
+            
+
     }
+
+    }
+
+    private fun onMsgDoneSubscribe(msg: String?) {
+        Toast.makeText(
+            applicationContext,
+            msg,
+            Toast.LENGTH_SHORT
+        ).show()
+
+    }
+
+    private fun onDataValidatedSubscribe(result: Boolean?) {
+        with(registerBinding) {
+            registerViewModel.saveUser(
+                nameUpdateEditText.text.toString(),
+                phoneUpdateEditText.text.toString(),
+                emailEditText.text.toString(),
+                passwordUpdateEditText.text.toString(),
+            )
+
+
+
+    }
+
+
 }
-
-
-
-
-
+}
 
 

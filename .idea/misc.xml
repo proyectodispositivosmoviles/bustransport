@@ -3,7 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Administrador/AndroidStudioProjects/bustransport/app/src/main/res/layout/fragment_register.xml" value="0.1" />
+        <entry key="..\:/Users/Administrador/AndroidStudioProjects/bustransport/app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="..\:/Users/Administrador/AndroidStudioProjects/bustransport/app/src/main/res/layout/activity_register.xml" value="0.151268115942029" />
+        <entry key="..\:/Users/Administrador/AndroidStudioProjects/bustransport/app/src/main/res/layout/fragment_login.xml" value="0.1" />
+        <entry key="..\:/Users/Administrador/AndroidStudioProjects/bustransport/app/src/main/res/layout/fragment_register.xml" value="0.22" />
+        <entry key="..\:/Users/Administrador/AndroidStudioProjects/bustransport/app/src/main/res/layout/fragment_registerterm.xml" value="0.16259057971014493" />
         <entry key="..\:/Users/fernando/AndroidStudioProjects/bustransport/app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="..\:/Users/fernando/AndroidStudioProjects/bustransport/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/juans/AndroidStudioProjects/bustransport-4 - copia/app/src/main/res/layout/fragment_triplist.xml" value="0.25416666666666665" />
