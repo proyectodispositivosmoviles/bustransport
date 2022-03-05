@@ -21,26 +21,6 @@ class LoginActivity : AppCompatActivity() {
         loginViewModel = ViewModelProvider(this)[LoginViewModel::class.java]
         setContentView(loginBinding.root)
 
-
-        /* override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        loginBinding = ActivityLoginBinding.inflate(inflater, container, false)
-        loginViewModel = ViewModelProvider(this)[LoginViewModel::class.java]
-        return loginBinding.root
-    }
-
-        //var emailReceived : String? = ""
-        //var passwordReceived : String? = ""
-
-        //val credentials = intent.extras
-        if (credentials != null){
-            emailReceived = credentials.getString("email")
-            passwordReceived = credentials.getString("password")
-        }*/
-
-
         loginBinding.registerTestView.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
@@ -48,10 +28,10 @@ class LoginActivity : AppCompatActivity() {
 
         with(loginBinding) {
             signInButton.setOnClickListener {
-                loginViewModel.validateFields(
+                /* loginViewModel.validateFields(
                     emailEditText.text.toString(),
                     passwordUpdateEditText.text.toString()
-                )
+                )*/
             }
         }
     }

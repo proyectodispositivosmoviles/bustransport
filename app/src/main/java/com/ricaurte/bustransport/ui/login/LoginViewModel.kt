@@ -6,24 +6,20 @@ import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.ricaurte.bustransport.local.User
 import com.ricaurte.bustransport.repository.UserRepository
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class LoginViewModel : ViewModel() {
-    private var campsValidate: MutableLiveData<Boolean> = MutableLiveData()
-    private val message: MutableLiveData<String> = MutableLiveData()
-    private val userRepository = UserRepository()
-    val messageDone: LiveData<String> = message
+    val userRepository = UserRepository()
+    private val findUser: MutableLiveData<User> = MutableLiveData()
+    val findBookDone: LiveData<User> = findUser
 
-    fun validateFields(email: String?,password:String) {
-
-            if (email != null && email.isNotEmpty() && password.isNotEmpty()) {
-
-                campsValidate.value=  true
-            }
-            else{
-                message.value="usuario ó contraseña incorrecta"
-            }
+    fun searchBook(email: String) {
+        GlobalScope.launch(Dispatchers.IO) {
+           // findUser.postValue(userRepository.searchUser(email:String))
+        }
     }
-
-
 }

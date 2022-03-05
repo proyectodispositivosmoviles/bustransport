@@ -22,16 +22,6 @@ class RegisterActivity : AppCompatActivity() {
         registerViewModel = ViewModelProvider(this)[RegisterViewModel::class.java]
         setContentView(registerBinding.root)
 
-        //aca es donde tengo el problema las dos
-        /*registerViewModel.dataValidated.observe(this) { result ->
-            onDataValidatedSubscribe(result)}
-
-            registerViewModel.msgDone.observe(this, { result ->
-                onMsgDoneSubscribe(result)
-        }*/
-
-
-
         with(registerBinding) {
 
             registerButton.setOnClickListener {
