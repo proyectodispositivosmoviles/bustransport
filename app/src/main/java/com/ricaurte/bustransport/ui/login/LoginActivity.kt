@@ -28,10 +28,10 @@ class LoginActivity : AppCompatActivity() {
 
         with(loginBinding) {
             signInButton.setOnClickListener {
-                /* loginViewModel.validateFields(
+                loginViewModel.validateFields(
                     emailEditText.text.toString(),
                     passwordUpdateEditText.text.toString()
-                )*/
+                )
             }
         }
     }

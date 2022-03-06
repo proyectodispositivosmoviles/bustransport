@@ -21,26 +21,45 @@ class RegisterActivity : AppCompatActivity() {
         registerBinding = ActivityRegisterBinding.inflate(layoutInflater)
         registerViewModel = ViewModelProvider(this)[RegisterViewModel::class.java]
         setContentView(registerBinding.root)
+        registerViewModel.dataValidated.observe(this , { result ->
+            onDataValidatedSubscribe(result)
+        })
 
-        with(registerBinding) {
+            with(registerBinding) {
 
-            registerButton.setOnClickListener {
-                registerViewModel.validatefiels(
+                registerButton.setOnClickListener {
+                    registerViewModel.validatefiels(
 
-                    nameUpdateEditText.text.toString(),
-                    phoneUpdateEditText.text.toString(),
-                    emailEditText.text.toString(),
-                    passwordUpdateEditText.text.toString(),
-                    repPasswordUpdateEditText.text.toString(),
-                )
-                Log.d("boton registrar","pase por el registrar")
+                        nameUpdateEditText.text.toString(),
+                        phoneUpdateEditText.text.toString(),
+                        emailEditText.text.toString(),
+                        passwordUpdateEditText.text.toString(),
+                        repPasswordUpdateEditText.text.toString(),
+                    )
+
+                }
+
+
             }
-            
 
+
+        }
+
+  private fun onDataValidatedSubscribe(result: Boolean) {
+      Log.d("boton registrar","pase validar para guardar")
+        with(registerBinding) {
+            registerViewModel.saveUser(
+                nameUpdateEditText.text.toString(),
+                phoneUpdateEditText.text.toString(),
+                emailEditText.text.toString(),
+                passwordUpdateEditText.text.toString(),
+            )
+            Log.d("boton registrar","pase por el registrar")
+            val intent = Intent(this@RegisterActivity, LoginActivity::class.java)
+            startActivity(intent)
     }
 
     }
-
     private fun onMsgDoneSubscribe(msg: String?) {
         Toast.makeText(
             applicationContext,
@@ -49,22 +68,6 @@ class RegisterActivity : AppCompatActivity() {
         ).show()
 
     }
-
-    private fun onDataValidatedSubscribe(result: Boolean?) {
-        with(registerBinding) {
-            registerViewModel.saveUser(
-                nameUpdateEditText.text.toString(),
-                phoneUpdateEditText.text.toString(),
-                emailEditText.text.toString(),
-                passwordUpdateEditText.text.toString(),
-            )
-
-
-
-    }
-
-
-}
 }
 
 

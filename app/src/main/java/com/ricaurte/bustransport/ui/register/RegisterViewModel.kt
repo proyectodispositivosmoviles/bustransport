@@ -21,9 +21,10 @@ import kotlinx.coroutines.launch
 class RegisterViewModel : ViewModel() {
 
     private val userRepository = UserRepository()
-    private var campsValidate: MutableLiveData<Boolean> = MutableLiveData()
+
     private val message: MutableLiveData<String> = MutableLiveData()
     val msgDone: LiveData<String> = message
+
     private val dataValidate: MutableLiveData<Boolean> = MutableLiveData()
     val dataValidated: LiveData<Boolean> = dataValidate
 
@@ -42,10 +43,11 @@ class RegisterViewModel : ViewModel() {
         val valido = validarCorreo(email)
         Log.d("validar","pase por el validar")
         if (name.isNotEmpty() && phone.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty() && repPassword.isNotEmpty()) {
+            Log.d("validar","entre a comparar,$name")
             if (valido) {
                 if (password.length > 5) {
                     if (password == repPassword) {
-                        campsValidate.value = true
+                         dataValidate.value = true
                     } else
                         message.value = "Las contraseñas deben iguales"
                 } else {
@@ -73,6 +75,7 @@ class RegisterViewModel : ViewModel() {
             Log.d( "nombre","$name")
             GlobalScope.launch(Dispatchers.IO) {
             userRepository.saveuser(name, phone, email, password)
+                Log.d( "nombre","supuestamente guarde")
 
 
         }
