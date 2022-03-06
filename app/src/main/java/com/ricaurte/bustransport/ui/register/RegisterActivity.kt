@@ -24,10 +24,10 @@ class RegisterActivity : AppCompatActivity() {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
-        registerBinding.termsConditions2TextView.setOnClickListener{
+        /*registerBinding.termsConditions2TextView.setOnClickListener{
             val intent = Intent(this, RegistertermActivity::class.java)
             startActivity(intent)
-        }
+        }*/
 
         registerViewModel.dataValidated.observe(this) { result ->
             onDataValidatedSubscribe(result)
@@ -38,7 +38,7 @@ class RegisterActivity : AppCompatActivity() {
         }
 
         with(registerBinding) {
-                val agree=termsConditionsRadioButton.isChecked
+               // val agree=termsConditionsRadioButton.isChecked
                 registerButton.setOnClickListener {
                     registerViewModel.validatefiels(
                         nameUpdateEditText.text.toString(),
