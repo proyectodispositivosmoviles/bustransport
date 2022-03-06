@@ -1,18 +1,13 @@
 package com.ricaurte.bustransport.ui.login
 
 import android.content.Context
-import android.content.Intent
-import android.util.Log
 import android.widget.Toast
-import androidx.core.content.ContextCompat.startActivity
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.test.core.app.ApplicationProvider
-import androidx.test.core.app.ApplicationProvider.getApplicationContext
 import com.ricaurte.bustransport.local.User
 import com.ricaurte.bustransport.repository.UserRepository
-import com.ricaurte.bustransport.ui.register.RegisterActivity
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -20,7 +15,7 @@ import kotlinx.coroutines.launch
 
 class LoginViewModel() : ViewModel() {
 
-    val userRepository = UserRepository()
+    private val userRepository = UserRepository()
     private val dataValidate: MutableLiveData<Boolean> = MutableLiveData()
     val dataValidated: LiveData<Boolean> = dataValidate
 
@@ -43,7 +38,7 @@ class LoginViewModel() : ViewModel() {
         } catch (e: Exception) {
             Toast.makeText(
                 ApplicationProvider.getApplicationContext<Context>(),
-                "pone un número!!",
+                "error",
                 Toast.LENGTH_SHORT
             ).show()
         }

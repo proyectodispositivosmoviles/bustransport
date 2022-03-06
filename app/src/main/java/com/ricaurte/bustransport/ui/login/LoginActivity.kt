@@ -28,8 +28,8 @@ class LoginActivity : AppCompatActivity() {
         })
         with(loginBinding) {
             signInButton.setOnClickListener {
-            var email = emailEditText.text.toString()
-            loginViewModel.searhUser(email,)
+            val email = emailEditText.text.toString()
+            loginViewModel.searhUser(email)
             }
         }
         loginBinding.registerTextButton.setOnClickListener {
@@ -45,8 +45,8 @@ class LoginActivity : AppCompatActivity() {
         ).show()
     }
     private fun onFindUserDoneSubscribe(user: User) {
-        var email=loginBinding.emailEditText.text.toString()
-        var password=loginBinding.passwordUpdateEditText.text.toString()
+        val email=loginBinding.emailEditText.text.toString()
+        val password=loginBinding.passwordUpdateEditText.text.toString()
         loginViewModel.validateFields(email,password,user)
         val intent = Intent(this@LoginActivity, RegisterActivity::class.java)
         startActivity(intent)

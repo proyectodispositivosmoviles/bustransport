@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.lifecycle.ViewModelProvider
 import com.ricaurte.bustransport.databinding.ActivityRegisterBinding
 import com.ricaurte.bustransport.ui.login.LoginActivity
