@@ -4,11 +4,10 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.lifecycle.ViewModelProvider
 import com.ricaurte.bustransport.ui.register.RegisterActivity
 import com.ricaurte.bustransport.databinding.ActivityLoginBinding
-import com.ricaurte.bustransport.ui.bottom.BottomActivity
+import com.ricaurte.bustransport.local.User
 
 class LoginActivity : AppCompatActivity() {
 
@@ -21,26 +20,45 @@ class LoginActivity : AppCompatActivity() {
         loginViewModel = ViewModelProvider(this)[LoginViewModel::class.java]
         setContentView(loginBinding.root)
 
+        loginViewModel.findUserDone.observe(this, { result ->
+            onFindUserDoneSubscribe(result)
+        })
+        loginViewModel.msgDone.observe(this, { result ->
+            onMsgDoneSubscribe(result)
+        })
+        with(loginBinding) {
+            signInButton.setOnClickListener {
+            var email = emailEditText.text.toString()
+            loginViewModel.searhUser(email,)
+            }
+        }
         loginBinding.registerTextButton.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
-        }
-
-        with(loginBinding) {
-            signInButton.setOnClickListener {
-                loginViewModel.validateFields(
-                    emailEditText.text.toString(),
-                    passwordUpdateEditText.text.toString()
-                )
-            }
-        }
+         }
     }
-
     private fun onMsgDoneSubscribe(msg: String?) {
         Toast.makeText(
             applicationContext,
-            "msg",
+            msg,
             Toast.LENGTH_SHORT
         ).show()
     }
-}
+    private fun onFindUserDoneSubscribe(user: User) {
+        var email=loginBinding.emailEditText.text.toString()
+        var password=loginBinding.passwordUpdateEditText.text.toString()
+        loginViewModel.validateFields(email,password,user)
+        val intent = Intent(this@LoginActivity, RegisterActivity::class.java)
+        startActivity(intent)
+        }
+
+        }
+
+
+
+
+
+
+
+
+

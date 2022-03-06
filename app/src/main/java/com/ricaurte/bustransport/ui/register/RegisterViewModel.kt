@@ -38,8 +38,10 @@ class RegisterViewModel : ViewModel() {
         email: String,
         password: String,
         repPassword: String,
+       // agree: Boolean,
 
-    ) {
+        ) {
+
         val valido = validarCorreo(email)
         Log.d("validar","pase por el validar")
         if (name.isNotEmpty() && phone.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty() && repPassword.isNotEmpty()) {
@@ -49,7 +51,7 @@ class RegisterViewModel : ViewModel() {
                     if (password == repPassword) {
                          dataValidate.value = true
                     } else
-                        message.value = "Las contraseñas deben iguales"
+                        message.value = "Las contraseñas deben ser iguales"
                 } else {
                     message.value = "La Contraseña Debe Contener Mínimo 6 Dígitos"
                 }
@@ -59,12 +61,10 @@ class RegisterViewModel : ViewModel() {
             }
 
         } else {
+
             message.value = "Por Favor Llene Todos Los Campos"
-        }
-
-
+         }
     }
-
     fun saveUser(
         name: String,
         phone: String,
@@ -72,13 +72,9 @@ class RegisterViewModel : ViewModel() {
         password: String,
 
         ) {
-            Log.d( "nombre","$name")
-            GlobalScope.launch(Dispatchers.IO) {
+             GlobalScope.launch(Dispatchers.IO) {
             userRepository.saveuser(name, phone, email, password)
-                Log.d( "nombre","supuestamente guarde")
-
-
-        }
+         }
     }
 
 }
