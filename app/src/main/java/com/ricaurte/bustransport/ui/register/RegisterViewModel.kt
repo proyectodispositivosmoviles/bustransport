@@ -31,7 +31,7 @@ class RegisterViewModel : ViewModel() {
         email: String,
         password: String,
         repPassword: String,
-       // agree: Boolean,
+        //agree: Boolean,
 
         ) {
 

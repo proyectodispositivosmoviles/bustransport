@@ -8,6 +8,9 @@ import androidx.lifecycle.ViewModelProvider
 import com.ricaurte.bustransport.ui.register.RegisterActivity
 import com.ricaurte.bustransport.databinding.ActivityLoginBinding
 import com.ricaurte.bustransport.local.User
+import com.ricaurte.bustransport.ui.bottom.BottomActivity
+import com.ricaurte.bustransport.ui.main.MainActivity
+import com.ricaurte.bustransport.ui.registerterm.RegistertermActivity
 
 class LoginActivity : AppCompatActivity() {
 
@@ -20,15 +23,15 @@ class LoginActivity : AppCompatActivity() {
         loginViewModel = ViewModelProvider(this)[LoginViewModel::class.java]
         setContentView(loginBinding.root)
 
-        loginViewModel.findUserDone.observe(this, { result ->
+        loginViewModel.findUserDone.observe(this) { result ->
             onFindUserDoneSubscribe(result)
-        })
-        loginViewModel.msgDone.observe(this, { result ->
+        }
+        loginViewModel.msgDone.observe(this) { result ->
             onMsgDoneSubscribe(result)
-        })
-        loginViewModel.dataValidated.observe(this , { result ->
+        }
+        loginViewModel.dataValidated.observe(this) { result ->
             onDataValidatedSubscribe(result)
-        })
+        }
         with(loginBinding) {
             signInButton.setOnClickListener {
             val email = emailEditText.text.toString()
@@ -42,7 +45,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun onDataValidatedSubscribe(result: Boolean?) {
-        val intent = Intent(this@LoginActivity, RegisterActivity::class.java)
+        val intent = Intent(this@LoginActivity, BottomActivity::class.java)
         startActivity(intent)
 
 
