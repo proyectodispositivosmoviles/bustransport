@@ -24,6 +24,8 @@ class LoginViewModel() : ViewModel() {
     private val message: MutableLiveData<String> = MutableLiveData()
     val msgDone: LiveData<String> = message
 
+
+
     fun validateFields(email: String, password: String, user: User) {
         if (email.isNotEmpty()&& password.isNotEmpty()&&password==user.password&&email.equals(user.email,true)) {
             dataValidate.value = true

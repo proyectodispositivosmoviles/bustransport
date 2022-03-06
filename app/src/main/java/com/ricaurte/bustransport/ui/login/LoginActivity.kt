@@ -26,6 +26,9 @@ class LoginActivity : AppCompatActivity() {
         loginViewModel.msgDone.observe(this, { result ->
             onMsgDoneSubscribe(result)
         })
+        loginViewModel.dataValidated.observe(this , { result ->
+            onDataValidatedSubscribe(result)
+        })
         with(loginBinding) {
             signInButton.setOnClickListener {
             val email = emailEditText.text.toString()
@@ -37,6 +40,14 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intent)
          }
     }
+
+    private fun onDataValidatedSubscribe(result: Boolean?) {
+        val intent = Intent(this@LoginActivity, RegisterActivity::class.java)
+        startActivity(intent)
+
+
+    }
+
     private fun onMsgDoneSubscribe(msg: String?) {
         Toast.makeText(
             applicationContext,
@@ -48,8 +59,7 @@ class LoginActivity : AppCompatActivity() {
         val email=loginBinding.emailEditText.text.toString()
         val password=loginBinding.passwordUpdateEditText.text.toString()
         loginViewModel.validateFields(email,password,user)
-        val intent = Intent(this@LoginActivity, RegisterActivity::class.java)
-        startActivity(intent)
+
         }
 
         }
