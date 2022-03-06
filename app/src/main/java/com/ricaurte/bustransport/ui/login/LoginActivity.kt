@@ -21,7 +21,7 @@ class LoginActivity : AppCompatActivity() {
         loginViewModel = ViewModelProvider(this)[LoginViewModel::class.java]
         setContentView(loginBinding.root)
 
-        loginBinding.registerTestView.setOnClickListener {
+        loginBinding.registerTextButton.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }

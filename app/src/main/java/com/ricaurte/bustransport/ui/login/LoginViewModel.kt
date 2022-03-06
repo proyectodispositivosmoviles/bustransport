@@ -23,11 +23,11 @@ class LoginViewModel() : ViewModel(){
     private val message: MutableLiveData<String> = MutableLiveData()
     val msgDone: LiveData<String> = message
 
-    fun searchBook(email: String) {
+    /*fun searchBook(email: String) {
         GlobalScope.launch(Dispatchers.IO) {
-           // findUser.postValue(userRepository.searchUser(email:String))
+           findUser.postValue(userRepository.searchUser(email:String))
         }
-    }
+    }*/
 
     fun validateFields(email: String, password: String) {
         if (email.isNotEmpty() && password.isNotEmpty()) {
