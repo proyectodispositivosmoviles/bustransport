@@ -1,12 +1,13 @@
 package com.ricaurte.bustransport.ui.approchlocation
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.ricaurte.bustransport.R
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
+import com.ricaurte.bustransport.databinding.FragmentApprochlocationBinding
 
 class ApprochlocationFragment : Fragment() {
 
@@ -15,12 +16,25 @@ class ApprochlocationFragment : Fragment() {
     }
 
     private lateinit var viewModel: ApprochlocationViewModel
+    private lateinit var approchlocationBinding: FragmentApprochlocationBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_approchlocation, container, false)
+        approchlocationBinding = FragmentApprochlocationBinding.inflate(inflater, container, false)
+        return approchlocationBinding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        approchlocationBinding.continueThreeButton.setOnClickListener {
+            findNavController().navigate(ApprochlocationFragmentDirections.actionApprochlocationFragmentToPsepayFragment())
+        }
+
+        approchlocationBinding.returnOneButton.setOnClickListener {
+            findNavController().navigate(ApprochlocationFragmentDirections.actionApprochlocationFragmentToReserveFragment())
+        }
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

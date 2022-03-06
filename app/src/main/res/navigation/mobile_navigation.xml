@@ -3,29 +3,70 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation_mobile"
-    app:startDestination="@id/reserve_Fragment2">
-    <fragment
-        android:id="@+id/reserve_Fragment2"
-        android:name="com.ricaurte.bustransport.ui.reserve.ReserveFragment"
-        android:label="@string/title_tickets"
-        tools:layout="@layout/fragment_reserve" >
-        <action
-            android:id="@+id/action_reserve_Fragment2_to_approchlocationFragment2"
-            app:destination="@id/approchlocationFragment" />
-    </fragment>
+    app:startDestination="@id/reserveFragment">
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.ricaurte.bustransport.ui.profile.ProfileFragment"
         android:label="@string/title_profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_updatecountFragment"
+            app:destination="@id/updatecountFragment" />
+    </fragment>
     <fragment
         android:id="@+id/currenttripFragment"
         android:name="com.ricaurte.bustransport.ui.currenttrip.CurrenttripFragment"
         android:label="@string/title_reservation"
         tools:layout="@layout/fragment_currenttrip" />
     <fragment
+        android:id="@+id/reserveFragment"
+        android:name="com.ricaurte.bustransport.ui.reserve.ReserveFragment"
+        android:label="Mi Viaje"
+        tools:layout="@layout/fragment_reserve">
+        <action
+            android:id="@+id/action_reserveFragment_to_approchlocationFragment"
+            app:destination="@id/approchlocationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updatecountFragment"
+        android:name="com.ricaurte.bustransport.ui.updatecount.UpdatecountFragment"
+        android:label="Perfil"
+        tools:layout="@layout/fragment_updatecount">
+        <action
+            android:id="@+id/action_updatecountFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
         android:id="@+id/approchlocationFragment"
         android:name="com.ricaurte.bustransport.ui.approchlocation.ApprochlocationFragment"
-        android:label="fragment_approchlocation"
-        tools:layout="@layout/fragment_approchlocation" />
+        android:label="Mi Viaje"
+        tools:layout="@layout/fragment_approchlocation">
+        <action
+            android:id="@+id/action_approchlocationFragment_to_psepayFragment"
+            app:destination="@id/psepayFragment" />
+        <action
+            android:id="@+id/action_approchlocationFragment_to_reserveFragment"
+            app:destination="@id/reserveFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/psepayFragment"
+        android:name="com.ricaurte.bustransport.ui.psepay.PsepayFragment"
+        android:label="Mi Viaje"
+        tools:layout="@layout/fragment_psepay">
+        <action
+            android:id="@+id/action_psepayFragment_to_approchlocationFragment"
+            app:destination="@id/approchlocationFragment" />
+        <action
+            android:id="@+id/action_psepayFragment_to_payconfirmationFragment"
+            app:destination="@id/payconfirmationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/payconfirmationFragment"
+        android:name="com.ricaurte.bustransport.ui.payconfirmation.PayconfirmationFragment"
+        android:label="Mi Viaje"
+        tools:layout="@layout/fragment_payconfirmation">
+        <action
+            android:id="@+id/action_payconfirmationFragment_to_currenttripFragment"
+            app:destination="@id/currenttripFragment" />
+    </fragment>
 </navigation>

@@ -1,12 +1,13 @@
 package com.ricaurte.bustransport.ui.updatecount
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.ricaurte.bustransport.R
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
+import com.ricaurte.bustransport.databinding.FragmentUpdatecountBinding
 
 class UpdatecountFragment : Fragment() {
 
@@ -15,12 +16,22 @@ class UpdatecountFragment : Fragment() {
     }
 
     private lateinit var viewModel: UpdatecountViewModel
+    private lateinit var updatecountBinding: FragmentUpdatecountBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_updatecount, container, false)
+        updatecountBinding = FragmentUpdatecountBinding.inflate(inflater, container, false)
+        return updatecountBinding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        updatecountBinding.returnUpdateButton.setOnClickListener {
+            findNavController().navigate(UpdatecountFragmentDirections.actionUpdatecountFragmentToProfileFragment())
+        }
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
