@@ -2,24 +2,71 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
-
+    android:id="@+id/navigation_mobile"
+    app:startDestination="@id/reserveFragment">
     <fragment
-        android:id="@+id/navigation_home"
-        android:name="com.ricaurte.bustransport.ui.bottom.ui.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
-
+        android:id="@+id/profileFragment"
+        android:name="com.ricaurte.bustransport.ui.profile.ProfileFragment"
+        android:label="@string/title_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_updatecountFragment"
+            app:destination="@id/updatecountFragment" />
+    </fragment>
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.ricaurte.bustransport.ui.bottom.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
-
+        android:id="@+id/currenttripFragment"
+        android:name="com.ricaurte.bustransport.ui.currenttrip.CurrenttripFragment"
+        android:label="@string/title_reservation"
+        tools:layout="@layout/fragment_currenttrip" />
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.ricaurte.bustransport.ui.bottom.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/reserveFragment"
+        android:name="com.ricaurte.bustransport.ui.reserve.ReserveFragment"
+        android:label="Mi Viaje"
+        tools:layout="@layout/fragment_reserve">
+        <action
+            android:id="@+id/action_reserveFragment_to_approchlocationFragment"
+            app:destination="@id/approchlocationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updatecountFragment"
+        android:name="com.ricaurte.bustransport.ui.updatecount.UpdatecountFragment"
+        android:label="Perfil"
+        tools:layout="@layout/fragment_updatecount">
+        <action
+            android:id="@+id/action_updatecountFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/approchlocationFragment"
+        android:name="com.ricaurte.bustransport.ui.approchlocation.ApprochlocationFragment"
+        android:label="Mi Viaje"
+        tools:layout="@layout/fragment_approchlocation">
+        <action
+            android:id="@+id/action_approchlocationFragment_to_psepayFragment"
+            app:destination="@id/psepayFragment" />
+        <action
+            android:id="@+id/action_approchlocationFragment_to_reserveFragment"
+            app:destination="@id/reserveFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/psepayFragment"
+        android:name="com.ricaurte.bustransport.ui.psepay.PsepayFragment"
+        android:label="Mi Viaje"
+        tools:layout="@layout/fragment_psepay">
+        <action
+            android:id="@+id/action_psepayFragment_to_approchlocationFragment"
+            app:destination="@id/approchlocationFragment" />
+        <action
+            android:id="@+id/action_psepayFragment_to_payconfirmationFragment"
+            app:destination="@id/payconfirmationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/payconfirmationFragment"
+        android:name="com.ricaurte.bustransport.ui.payconfirmation.PayconfirmationFragment"
+        android:label="Mi Viaje"
+        tools:layout="@layout/fragment_payconfirmation">
+        <action
+            android:id="@+id/action_payconfirmationFragment_to_currenttripFragment"
+            app:destination="@id/currenttripFragment" />
+    </fragment>
 </navigation>

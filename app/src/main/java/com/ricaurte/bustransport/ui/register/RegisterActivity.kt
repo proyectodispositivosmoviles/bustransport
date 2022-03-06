@@ -1,61 +1,84 @@
 package com.ricaurte.bustransport.ui.register
-
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
-import androidx.core.util.PatternsCompat
+import androidx.lifecycle.ViewModelProvider
 import com.ricaurte.bustransport.databinding.ActivityRegisterBinding
 import com.ricaurte.bustransport.ui.login.LoginActivity
+import com.ricaurte.bustransport.ui.registerterm.RegistertermActivity
 
 
 class RegisterActivity : AppCompatActivity() {
     private lateinit var registerBinding: ActivityRegisterBinding
+    private lateinit var registerViewModel: RegisterViewModel
 
-    private fun validarCorreo(email_: String): Boolean {
-        return PatternsCompat.EMAIL_ADDRESS.matcher(email_).matches()
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         registerBinding = ActivityRegisterBinding.inflate(layoutInflater)
+        registerViewModel = ViewModelProvider(this)[RegisterViewModel::class.java]
         setContentView(registerBinding.root)
+        registerBinding.returnRegisterButton.setOnClickListener{
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
+        /*registerBinding.termsConditions2TextView.setOnClickListener{
+            val intent = Intent(this, RegistertermActivity::class.java)
+            startActivity(intent)
+        }*/
+
+        registerViewModel.dataValidated.observe(this) { result ->
+            onDataValidatedSubscribe(result)
+
+        }
+        registerViewModel.msgDone.observe(this) { result ->
+            onMsgDoneSubscribe(result)
+        }
 
         with(registerBinding) {
-            registerButton.setOnClickListener {
-                val email = emailEditText.text.toString()
-                val password = passwordEditText.text.toString()
-                val repPassword = repPasswordEditText.text.toString()
-                val valido=validarCorreo(email)
-                if(valido){
-                    if (password.length>5){
-                        if (password == repPassword){
-                            val intent = Intent(this@RegisterActivity, LoginActivity::class.java)
-                            intent.putExtra("email",email)
-                            intent.putExtra("password", password)
-                            startActivity(intent)
-                        } else
-                            Toast.makeText(applicationContext,"Las contraseñas deben iguales", Toast.LENGTH_SHORT).show()
+               // val agree=termsConditionsRadioButton.isChecked
+                registerButton.setOnClickListener {
+                    registerViewModel.validatefiels(
+                        nameUpdateEditText.text.toString(),
+                        phoneUpdateEditText.text.toString(),
+                        emailEditText.text.toString(),
+                        passwordUpdateEditText.text.toString(),
+                        repPasswordUpdateEditText.text.toString(),
+                        //agree,
+                    )
 
-                    }
-                    else{
-                        Toast.makeText(applicationContext,"La Contraseña Debe Contener Mínimo 6 Dígitos", Toast.LENGTH_SHORT).show()
-
-                    }
-
-                }
-                else{
-                    Toast.makeText(applicationContext,"Correo No Válido", Toast.LENGTH_SHORT).show()
                 }
 
 
             }
+
+
         }
+
+  private fun onDataValidatedSubscribe(result: Boolean) {
+      Log.d("boton registrar","pase validar para guardar")
+        with(registerBinding) {
+            registerViewModel.saveUser(
+                nameUpdateEditText.text.toString(),
+                phoneUpdateEditText.text.toString(),
+                emailEditText.text.toString(),
+                passwordUpdateEditText.text.toString(),
+            )
+             val intent = Intent(this@RegisterActivity, LoginActivity::class.java)
+            startActivity(intent)
+    }
+    }
+    private fun onMsgDoneSubscribe(msg: String?) {
+        Toast.makeText(
+            applicationContext,
+            msg,
+            Toast.LENGTH_SHORT
+        ).show()
+
     }
 }
-
-
-
 
 
 

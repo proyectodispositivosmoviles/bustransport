@@ -6,31 +6,31 @@
     android:layout_height="match_parent"
     tools:context=".ui.login.LoginActivity">
 
-    <ImageView
-        android:id="@+id/logo_image_view"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="32dp"
+    <TextView
+        android:id="@+id/register_text_view"
+        style="@style/TextViewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/Register"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/ic_launcher2"
-        tools:ignore="ContentDescription" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/name_text_input_layout"
+        android:id="@+id/name_update_text_input_layout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="64dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logo_image_view">
+        app:layout_constraintTop_toBottomOf="@+id/register_text_view">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/name_edit_text"
+            android:id="@+id/name_update_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/name"
@@ -39,7 +39,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/phone_text_input_layout"
+        android:id="@+id/phone_update_text_input_layout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -48,10 +48,10 @@
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name_text_input_layout">
+        app:layout_constraintTop_toBottomOf="@+id/name_update_text_input_layout">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/phone_edit_text"
+            android:id="@+id/phone_update_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/phone"
@@ -69,7 +69,7 @@
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phone_text_input_layout">
+        app:layout_constraintTop_toBottomOf="@+id/phone_update_text_input_layout">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/email_edit_text"
@@ -82,7 +82,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/password_text_input_layout"
+        android:id="@+id/password_update_text_input_layout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -95,7 +95,7 @@
         app:layout_constraintTop_toBottomOf="@+id/email_text_input_layout">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/password_edit_text"
+            android:id="@+id/password_update_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/password"
@@ -104,7 +104,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/rep_password_text_input_layout"
+        android:id="@+id/rep_password_update_text_input_layout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -114,10 +114,10 @@
         app:endIconMode="password_toggle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password_text_input_layout">
+        app:layout_constraintTop_toBottomOf="@+id/password_update_text_input_layout">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/rep_password_edit_text"
+            android:id="@+id/rep_password_update_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/repeat_password"
@@ -129,12 +129,48 @@
         android:id="@+id/register_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:text="@string/register"
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rep_password_text_input_layout" />
+        app:layout_constraintTop_toBottomOf="@+id/terms_conditions_radio_button" />
+
+    <Button
+        android:id="@+id/return_register_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/return_button"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/register_button" />
+
+    <RadioButton
+        android:id="@+id/terms_conditions_radio_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/radio_button_empty"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.044"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rep_password_update_text_input_layout" />
+
+    <TextView
+        android:id="@+id/terms_conditions2_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/terms_and_Conditions"
+        android:textAlignment="viewStart"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/terms_conditions_radio_button"
+        app:layout_constraintTop_toBottomOf="@+id/rep_password_update_text_input_layout" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
