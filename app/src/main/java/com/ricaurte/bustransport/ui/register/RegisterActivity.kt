@@ -19,15 +19,23 @@ class RegisterActivity : AppCompatActivity() {
         registerBinding = ActivityRegisterBinding.inflate(layoutInflater)
         registerViewModel = ViewModelProvider(this)[RegisterViewModel::class.java]
         setContentView(registerBinding.root)
-        registerViewModel.dataValidated.observe(this , { result ->
+        registerBinding.returnRegisterButton.setOnClickListener{
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
+        /*registerBinding.termsConditions2TextView.setOnClickListener{
+            val intent = Intent(this, RegistertermActivity::class.java)
+            startActivity(intent)
+        }*/
+        registerViewModel.dataValidated.observe(this) { result ->
             onDataValidatedSubscribe(result)
 
-        })
-        registerViewModel.msgDone.observe(this, { result ->
+        }
+        registerViewModel.msgDone.observe(this) { result ->
             onMsgDoneSubscribe(result)
-        })
-            with(registerBinding) {
-                val agree=termsConditionsRadioButton.isChecked
+        }
+        with(registerBinding) {
+               // val agree=termsConditionsRadioButton.isChecked
                 registerButton.setOnClickListener {
                     registerViewModel.validatefiels(
                         nameUpdateEditText.text.toString(),
