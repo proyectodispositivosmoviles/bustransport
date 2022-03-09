@@ -2,16 +2,23 @@ package com.ricaurte.bustransport.ui.register
 
 
 import android.util.Log
+import android.widget.Toast
 import androidx.core.util.PatternsCompat
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import com.ricaurte.bustransport.repository.UserRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
+
+
 class RegisterViewModel : ViewModel() {
+    private lateinit var auth: FirebaseAuth
 
     private val userRepository = UserRepository()
 
@@ -41,6 +48,24 @@ class RegisterViewModel : ViewModel() {
             if (valido) {
                 if (password.length > 5) {
                     if (password == repPassword) {
+                        auth=Firebase.auth
+                        auth.createUserWithEmailAndPassword(email, password)
+                            .addOnCompleteListener() { task ->
+                                if (task.isSuccessful) {
+                                    Log.d("registro", "createUserWithEmail:success")
+                                    val user = auth.currentUser
+
+                                } else {
+                                    // If sign in fails, display a message to the user.
+                                    Log.w("registro", "createUserWithEmail:failure", task.exception)
+                                    /*Toast.makeText(
+                                        applicationContext,
+                                        "autenticacion fallida",
+                                        Toast.LENGTH_SHORT
+                                    ).show()*/
+
+                                }
+                            }
                          dataValidate.value = true
                     } else
                         message.value = "Las contraseñas deben ser iguales"
@@ -62,7 +87,8 @@ class RegisterViewModel : ViewModel() {
 
         ) {
              GlobalScope.launch(Dispatchers.IO) {
-            userRepository.saveuser(name, phone, email, password)
+             userRepository.saveuser(name, phone, email, password)
+
          }
     }
 

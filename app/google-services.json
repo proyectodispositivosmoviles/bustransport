@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "989867179147",
+    "project_id": "bustransport-d73af",
+    "storage_bucket": "bustransport-d73af.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:989867179147:android:3fb584a5d2cdf5edbd288e",
+        "android_client_info": {
+          "package_name": "com.ricaurte.bustransport"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "989867179147-5tv731k76gim4vufk9i77nt27mr2ad1p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ricaurte.bustransport",
+            "certificate_hash": "5a3e39af3a95e43e33bdf25812881880bb538d5c"
+          }
+        },
+        {
+          "client_id": "989867179147-tj8p64ekqqo37mherchkpk826k38r4lj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFXjrvbdeiRLogjeVip-_5t58Ax8VFWTM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "989867179147-tj8p64ekqqo37mherchkpk826k38r4lj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,11 +1,15 @@
 package com.ricaurte.bustransport.ui.login
 
 import android.content.Context
+import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.test.core.app.ApplicationProvider
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import com.ricaurte.bustransport.local.User
 import com.ricaurte.bustransport.repository.UserRepository
 import kotlinx.coroutines.Dispatchers
@@ -14,6 +18,7 @@ import kotlinx.coroutines.launch
 
 
 class LoginViewModel() : ViewModel() {
+    private lateinit var auth: FirebaseAuth
 
     private val userRepository = UserRepository()
     private val dataValidate: MutableLiveData<Boolean> = MutableLiveData()
@@ -28,7 +33,17 @@ class LoginViewModel() : ViewModel() {
 
     fun validateFields(email: String, password: String, user: User) {
         if (email.isNotEmpty()&& password.isNotEmpty()&&password==user.password&&email.equals(user.email,true)) {
-            dataValidate.value = true
+            auth= Firebase.auth
+            auth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener() { task ->
+                    if (task.isSuccessful) {
+                        dataValidate.value = true
+                    } else {
+                    Log.w("registro", "signInWithEmail:failure", task.exception)
+                    }
+                }
+
+
         } else {
             message.value = "usuario o contraseña incorrecto"
         }
