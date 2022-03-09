@@ -1,6 +1,7 @@
 package com.ricaurte.bustransport.ui.login
 
 import android.content.Context
+import android.content.Intent
 import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.LiveData
@@ -12,6 +13,7 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.ricaurte.bustransport.local.User
 import com.ricaurte.bustransport.repository.UserRepository
+import com.ricaurte.bustransport.ui.bottom.BottomActivity
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -39,12 +41,11 @@ class LoginViewModel() : ViewModel() {
                     if (task.isSuccessful) {
                         dataValidate.value = true
                     } else {
-                    Log.w("registro", "signInWithEmail:failure", task.exception)
+                        message.value="no pude entrar"
+                        Log.w("registro", "signInWithEmail:failure", task.exception)
                     }
                 }
-
-
-        } else {
+      } else {
             message.value = "usuario o contraseña incorrecto"
         }
     }
@@ -61,5 +62,3 @@ class LoginViewModel() : ViewModel() {
         }
     }
 }
-
-

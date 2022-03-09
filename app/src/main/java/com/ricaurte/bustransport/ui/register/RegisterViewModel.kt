@@ -43,7 +43,6 @@ class RegisterViewModel : ViewModel() {
         ) {
 
         val valido = validarCorreo(email)
-        Log.d("validar","pase por el validar")
         if (name.isNotEmpty() && phone.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty() && repPassword.isNotEmpty()) {
             if (valido) {
                 if (password.length > 5) {
@@ -54,7 +53,7 @@ class RegisterViewModel : ViewModel() {
                                 if (task.isSuccessful) {
                                     Log.d("registro", "createUserWithEmail:success")
                                     val user = auth.currentUser
-
+                                    dataValidate.value = true
                                 } else {
                                     // If sign in fails, display a message to the user.
                                     Log.w("registro", "createUserWithEmail:failure", task.exception)
@@ -66,7 +65,7 @@ class RegisterViewModel : ViewModel() {
 
                                 }
                             }
-                         dataValidate.value = true
+                        //dataValidate.value = true
                     } else
                         message.value = "Las contraseñas deben ser iguales"
                 } else {
@@ -77,7 +76,7 @@ class RegisterViewModel : ViewModel() {
             }
         } else {
             message.value = "Por Favor Llene Todos Los Campos"
-         }
+        }
     }
     fun saveUser(
         name: String,
@@ -86,14 +85,13 @@ class RegisterViewModel : ViewModel() {
         password: String,
 
         ) {
-             GlobalScope.launch(Dispatchers.IO) {
-             userRepository.saveuser(name, phone, email, password)
+        GlobalScope.launch(Dispatchers.IO) {
+            userRepository.saveuser(name, phone, email, password)
 
-         }
+        }
     }
 
 }
-
 
 
 
