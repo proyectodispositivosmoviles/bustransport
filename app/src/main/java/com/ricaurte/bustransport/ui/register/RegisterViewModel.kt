@@ -9,8 +9,11 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.ricaurte.bustransport.repository.UserRepository
+import com.ricaurte.bustransport.server.User
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -51,9 +54,9 @@ class RegisterViewModel : ViewModel() {
                         auth.createUserWithEmailAndPassword(email, password)
                             .addOnCompleteListener() { task ->
                                 if (task.isSuccessful) {
-                                    Log.d("registro", "createUserWithEmail:success")
-                                    val user = auth.currentUser
+                                    createUser(auth.currentUser?.uid, name,phone,email,)
                                     dataValidate.value = true
+
                                 } else {
                                     // If sign in fails, display a message to the user.
                                     Log.w("registro", "createUserWithEmail:failure", task.exception)
@@ -76,6 +79,22 @@ class RegisterViewModel : ViewModel() {
             }
         } else {
             message.value = "Por Favor Llene Todos Los Campos"
+        }
+    }
+
+    private fun createUser(
+        uid: String?,
+        name: String,
+        phone: String,
+        email: String,
+       ) {
+        val db = Firebase.firestore
+        val user = User(uid = uid, name = name, phone = phone, email = email)
+        email?.let { uid ->
+            db.collection("users").document(email).set(user)
+                .addOnSuccessListener {
+                  message.value="usuario correctamente creado"
+                }
         }
     }
     fun saveUser(
