@@ -6,10 +6,12 @@ import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.ricaurte.bustransport.databinding.ActivityRegisterBinding
+import com.ricaurte.bustransport.ui.bottom.BottomActivity
 import com.ricaurte.bustransport.ui.login.LoginActivity
+import com.ricaurte.bustransport.ui.registerterm.RegistertermActivity
 
 
-class RegisterActivity : AppCompatActivity() {
+class  RegisterActivity : AppCompatActivity() {
     private lateinit var registerBinding: ActivityRegisterBinding
     private lateinit var registerViewModel: RegisterViewModel
 
@@ -23,10 +25,10 @@ class RegisterActivity : AppCompatActivity() {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
-        /*registerBinding.termsConditions2TextView.setOnClickListener{
+        registerBinding.termsConditions2TextView.setOnClickListener{
             val intent = Intent(this, RegistertermActivity::class.java)
             startActivity(intent)
-        }*/
+        }
         registerViewModel.dataValidated.observe(this) { result ->
             onDataValidatedSubscribe(result)
 
@@ -55,14 +57,18 @@ class RegisterActivity : AppCompatActivity() {
         }
 
   private fun onDataValidatedSubscribe(result: Boolean) {
-      Log.d("boton registrar","pase validar para guardar")
-        with(registerBinding) {
-            registerViewModel.saveUser(
+      with(registerBinding) {
+           /* registerViewModel.saveUser(
                 nameUpdateEditText.text.toString(),
                 phoneUpdateEditText.text.toString(),
                 emailEditText.text.toString(),
                 passwordUpdateEditText.text.toString(),
-            )
+            )*/
+          registerViewModel.saveUserInServer(
+              nameUpdateEditText.text.toString(),
+              phoneUpdateEditText.text.toString(),
+              emailEditText.text.toString(),
+              )
              val intent = Intent(this@RegisterActivity, LoginActivity::class.java)
             startActivity(intent)
     }

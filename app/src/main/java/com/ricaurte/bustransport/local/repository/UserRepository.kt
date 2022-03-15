@@ -1,4 +1,4 @@
-package com.ricaurte.bustransport.repository
+package com.ricaurte.bustransport.local.repository
 
 import com.ricaurte.bustransport.Bustransport
 import com.ricaurte.bustransport.local.User
@@ -6,7 +6,11 @@ import com.ricaurte.bustransport.local.UserDao
 import java.sql.Types.NULL
 
 class UserRepository {
-    suspend fun saveuser(name: String, phone: String, email: String, password: String) {
+    suspend fun saveuser(
+        name: String,
+        phone: String,
+        email: String,
+        password: String) {
         val user = User(
             id = NULL,
             name = name,

@@ -55,5 +55,8 @@
     <string name="Register">REGISTRO</string>
     <string name="terms_and_Conditions">Acepto Términos y Condiciones</string>
     <string name="radio_button_empty" />
+    <string name="avatarIUser_imageView">vista avatar</string>
+    <string name="showUser_textView">"muestra usuario "</string>
+
 
 </resources>
