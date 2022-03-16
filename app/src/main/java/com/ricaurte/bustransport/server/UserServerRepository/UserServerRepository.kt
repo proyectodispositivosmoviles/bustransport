@@ -10,6 +10,7 @@ class UserServerRepository {
         name: String,
         phone: String,
         email: String,
+        //url_avatar:String,
     ) {
         val documentUser = db.collection("users").document()
 
@@ -18,6 +19,7 @@ class UserServerRepository {
             name = name,
             phone = phone,
             email = email,
+            //url_avatar=url_avatar,
         )
         db.collection("users").document(email).set(user)
 

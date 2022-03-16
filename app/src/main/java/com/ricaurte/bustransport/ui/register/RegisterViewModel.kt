@@ -16,7 +16,7 @@ import com.ricaurte.bustransport.server.UserServerRepository.UserServerRepositor
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-
+import kotlin.random.Random
 
 
 class RegisterViewModel : ViewModel() {
@@ -59,7 +59,7 @@ class RegisterViewModel : ViewModel() {
                             }
                         dataValidate.value = true
                     } else
-                        message.value = "Las contraseñas deben ser iguales"
+                        message.value = "Las Contraseñas Deben Ser Iguales"
                 } else {
                     message.value = "La Contraseña Debe Contener Mínimo 6 Dígitos"
                 }
@@ -87,7 +87,8 @@ class RegisterViewModel : ViewModel() {
     fun saveUserInServer(name: String, phone: String, email: String, ) {
         GlobalScope.launch(Dispatchers.IO){
 
-            userServerRepository.saveUser(name, phone,email)
+
+            userServerRepository.saveUser(name, phone,email,)
         }
 
         }

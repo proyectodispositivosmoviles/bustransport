@@ -13,4 +13,4 @@ data class User(
     @ColumnInfo(name = "phone") var phone: String = "",
     @ColumnInfo(name = "email") var email: String = "",
     @ColumnInfo(name = "password") var password: String = "",
-) : Serializable
+   ) : Serializable
