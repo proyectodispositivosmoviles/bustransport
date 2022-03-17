@@ -15,9 +15,9 @@ class RegistertermActivity : AppCompatActivity() {
         registertermBinding = ActivityRegistertermBinding.inflate(layoutInflater)
         setContentView(registertermBinding.root)
 
-        registertermBinding.returnConditionButton.setOnClickListener {
+       /* registertermBinding.returnConditionButton.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
-        }
+        }*/
     }
 }

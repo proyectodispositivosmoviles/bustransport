@@ -9,7 +9,6 @@ class Bustransport: Application() {
     companion object {
         lateinit var database: UserDatabase
     }
-
     override fun onCreate() {
         super.onCreate()
 

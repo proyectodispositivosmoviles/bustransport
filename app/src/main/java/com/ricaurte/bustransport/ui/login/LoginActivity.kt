@@ -3,17 +3,22 @@ package com.ricaurte.bustransport.ui.login
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import com.ricaurte.bustransport.ui.register.RegisterActivity
 import com.ricaurte.bustransport.databinding.ActivityLoginBinding
 import com.ricaurte.bustransport.local.User
 import com.ricaurte.bustransport.ui.bottom.BottomActivity
 import com.ricaurte.bustransport.ui.main.MainActivity
+import com.ricaurte.bustransport.ui.payconfirmation.PayconfirmationFragment
 import com.ricaurte.bustransport.ui.registerterm.RegistertermActivity
 
 class LoginActivity : AppCompatActivity() {
-
+    private lateinit var auth: FirebaseAuth
     private lateinit var loginBinding: ActivityLoginBinding
     private lateinit var loginViewModel: LoginViewModel
 
@@ -22,9 +27,8 @@ class LoginActivity : AppCompatActivity() {
         loginBinding = ActivityLoginBinding.inflate(layoutInflater)
         loginViewModel = ViewModelProvider(this)[LoginViewModel::class.java]
         setContentView(loginBinding.root)
-
         loginViewModel.findUserDone.observe(this) { result ->
-            onFindUserDoneSubscribe(result)
+        onFindUserDoneSubscribe(result)
         }
         loginViewModel.msgDone.observe(this) { result ->
             onMsgDoneSubscribe(result)
@@ -35,7 +39,9 @@ class LoginActivity : AppCompatActivity() {
         with(loginBinding) {
             signInButton.setOnClickListener {
             val email = emailEditText.text.toString()
-            loginViewModel.searhUser(email)
+            val password=passwordUpdateEditText.text.toString()
+               loginViewModel.searchUserInFirebase(email,password)
+            //loginViewModel.searhUser(email)
             }
         }
         loginBinding.registerTextButton.setOnClickListener {
@@ -45,7 +51,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun onDataValidatedSubscribe(result: Boolean?) {
-        val intent = Intent(this@LoginActivity, BottomActivity::class.java)
+        val intent = Intent(this@LoginActivity,BottomActivity::class.java)
         startActivity(intent)
 
 
@@ -58,20 +64,16 @@ class LoginActivity : AppCompatActivity() {
             Toast.LENGTH_SHORT
         ).show()
     }
-    private fun onFindUserDoneSubscribe(user: User) {
+    private fun onFindUserDoneSubscribe(user: User?) {
         val email=loginBinding.emailEditText.text.toString()
         val password=loginBinding.passwordUpdateEditText.text.toString()
-        loginViewModel.validateFields(email,password,user)
-
+        if (user != null) {
+            //loginViewModel.validateFields(email,password,user)
+        }
+        else{
+           // Toast.makeText( applicationContext,"Usuario No Existe", Toast.LENGTH_SHORT).show()
+            loginViewModel.searchUserInFirebase(email,password)
+        }
         }
 
         }
-
-
-
-
-
-
-
-
-
