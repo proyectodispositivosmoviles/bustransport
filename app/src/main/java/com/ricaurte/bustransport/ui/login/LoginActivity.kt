@@ -28,7 +28,7 @@ class LoginActivity : AppCompatActivity() {
         loginViewModel = ViewModelProvider(this)[LoginViewModel::class.java]
         setContentView(loginBinding.root)
         loginViewModel.findUserDone.observe(this) { result ->
-        onFindUserDoneSubscribe(result)
+            onFindUserDoneSubscribe(result)
         }
         loginViewModel.msgDone.observe(this) { result ->
             onMsgDoneSubscribe(result)
@@ -38,16 +38,16 @@ class LoginActivity : AppCompatActivity() {
         }
         with(loginBinding) {
             signInButton.setOnClickListener {
-            val email = emailEditText.text.toString()
-            val password=passwordUpdateEditText.text.toString()
-               loginViewModel.searchUserInFirebase(email,password)
-            //loginViewModel.searhUser(email)
+                val email = emailEditText.text.toString()
+                val password=passwordUpdateEditText.text.toString()
+                loginViewModel.searchUserInFirebase(email,password)
+                //loginViewModel.searhUser(email)
             }
         }
         loginBinding.registerTextButton.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
-         }
+        }
     }
 
     private fun onDataValidatedSubscribe(result: Boolean?) {
@@ -71,9 +71,9 @@ class LoginActivity : AppCompatActivity() {
             //loginViewModel.validateFields(email,password,user)
         }
         else{
-           // Toast.makeText( applicationContext,"Usuario No Existe", Toast.LENGTH_SHORT).show()
+            // Toast.makeText( applicationContext,"Usuario No Existe", Toast.LENGTH_SHORT).show()
             loginViewModel.searchUserInFirebase(email,password)
         }
-        }
+    }
 
-        }
+}

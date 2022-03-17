@@ -1,17 +1,17 @@
 package com.ricaurte.bustransport.ui.currenttrip
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import com.ricaurte.bustransport.R
 
-class currenttripFragment : Fragment() {
+class CurrenttripFragment : Fragment() {
 
     companion object {
-        fun newInstance() = currenttripFragment()
+        fun newInstance() = CurrenttripFragment()
     }
 
     private lateinit var viewModel: CurrenttripViewModel
