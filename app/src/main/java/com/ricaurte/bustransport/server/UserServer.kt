@@ -7,5 +7,5 @@ data class UserServer(
     var name: String? = null,
     var phone: String? = null,
     var email: String? = null,
-    var url_avatar:String?=null,
+    var urlAvatar:String?=null,
     ):Serializable
