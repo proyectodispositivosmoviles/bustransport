@@ -23,9 +23,9 @@ class Reserve_Fragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(ReserveViewModel::class.java)
+        viewModel = ViewModelProvider(this)[ReserveViewModel::class.java]
         // TODO: Use the ViewModel
-        // yuly y luis son amantes
+        // yuly y luis son muy buenos amigos
     }
 
 }
