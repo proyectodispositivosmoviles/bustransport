@@ -25,6 +25,7 @@ class Reserve_Fragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(ReserveViewModel::class.java)
         // TODO: Use the ViewModel
+        // yuly y luis son amantes
     }
 
 }
