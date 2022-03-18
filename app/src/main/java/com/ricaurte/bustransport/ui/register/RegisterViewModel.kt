@@ -23,7 +23,7 @@ class RegisterViewModel : ViewModel() {
     private lateinit var auth: FirebaseAuth
 
     private val userRepository = UserRepository()
-    private val userServerRepository=UserServerRepository()
+    private val userServerRepository= UserServerRepository()
 
     private val message: MutableLiveData<String> = MutableLiveData()
     val msgDone: LiveData<String> = message
@@ -52,7 +52,7 @@ class RegisterViewModel : ViewModel() {
                     if (password == repPassword) {
                         auth=Firebase.auth
                         auth.createUserWithEmailAndPassword(email, password)
-                            .addOnCompleteListener() { task ->
+                            .addOnCompleteListener { task ->
                                 if (task.isSuccessful) {
                                     Log.d("Register", "createUserWithEmail:success")
                                 }
@@ -71,7 +71,7 @@ class RegisterViewModel : ViewModel() {
         }
     }
 
-    fun saveUser(
+    /*fun saveUser(
         name: String,
         phone: String,
         email: String,
@@ -83,12 +83,10 @@ class RegisterViewModel : ViewModel() {
             userRepository.saveuser(name, phone, email, password)
 
         }
-    }
+    }*/
 
     fun saveUserInServer(name: String, phone: String, email: String,urlAvatar:String ) {
         GlobalScope.launch(Dispatchers.IO){
-
-
             userServerRepository.saveUser(name, phone,email,urlAvatar)
         }
 
