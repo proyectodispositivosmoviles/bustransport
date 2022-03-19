@@ -72,11 +72,12 @@ class  RegisterActivity : AppCompatActivity() {
                "https://firebasestorage.googleapis.com/v0/b/bustransport-d73af.appspot.com/o/useravatars%2Favatar3.webp?alt=media&token=2d0225a0-84e6-494f-8c80-d1667650164a";
                "https://firebasestorage.googleapis.com/v0/b/bustransport-d73af.appspot.com/o/useravatars%2Favatar4.webp?alt=media&token=ccc14165-9b05-46f2-8c6d-fa9d99565df9"})
            val urlAvatar=myUrl[myRandom]*/
+
             registerViewModel.saveUserInServer(
                 nameUpdateEditText.text.toString(),
                 phoneUpdateEditText.text.toString(),
                 emailEditText.text.toString(),
-                //urlAvatar.toString(),
+                urlAvatar="https://firebasestorage.googleapis.com/v0/b/bustransport-d73af.appspot.com/o/useravatars%2Favatar3.webp?alt=media&token=2d0225a0-84e6-494f-8c80-d1667650164a"
             )
             val intent = Intent(this@RegisterActivity, LoginActivity::class.java)
             startActivity(intent)
