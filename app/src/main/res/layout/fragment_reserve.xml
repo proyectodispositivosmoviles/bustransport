@@ -90,26 +90,30 @@ tools:context=".ui.reserve.ReserveFragment">
 
     <Spinner
         android:id="@+id/seating_spinner"
+        style="@style/Base.Widget.AppCompat.Spinner.Underlined"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="32dp"
         android:contentDescription="@string/travel_schedule"
+        android:entries="@array/Horarios_spinner"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.363"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/schedule_text_view" />
 
     <Spinner
         android:id="@+id/reserve_chairs_spinner"
+        style="@style/Base.Widget.AppCompat.Spinner.Underlined"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginTop="20dp"
         android:contentDescription="@string/reserve_chairs_spinner"
+        android:entries="@array/Asientos_spinner"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

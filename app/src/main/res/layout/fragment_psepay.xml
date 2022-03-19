@@ -73,15 +73,27 @@
         app:layout_constraintTop_toBottomOf="@+id/location2_text_view" />
 
     <TextView
+        android:id="@+id/license_plate_text_view"
+        style="@style/TextViewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/license_plate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/value2_text_view" />
+
+    <TextView
         android:id="@+id/payment_text_view"
         style="@style/TextViewTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="32dp"
         android:text="@string/payment"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/value2_text_view" />
+        app:layout_constraintTop_toBottomOf="@+id/license_plate_text_view" />
 
     <Button
         android:id="@+id/return_one_button"
@@ -112,7 +124,7 @@
         android:id="@+id/pse_image_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="32dp"
         android:contentDescription="@string/pse"
         android:src="@mipmap/ic_pse"
         app:layout_constraintEnd_toEndOf="parent"

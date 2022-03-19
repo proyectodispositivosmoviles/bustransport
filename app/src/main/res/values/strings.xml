@@ -9,7 +9,7 @@
     <string name="register">Registrarme</string>
     <string name="sign_out">Cerrar sesión</string>
     <string name="name">Nombres:</string>
-    <string name="phone">Celular</string>
+    <string name="phone">Celular:</string>
     <string name="email_text_view">correo</string>
     <string name="autenticado">autenticado</string>
     <string name="title_activity_bottom">BottomActivity</string>
@@ -61,6 +61,29 @@
     <string name="name_profile">Usuario</string>
     <string name="username">Nombres</string>
     <string name="phone_profile">Celular</string>
+    <string name="license_plate">Placa:</string>
+    <string-array name="Horarios_spinner">
+        <item>06:00 A.M.</item>
+        <item>07:00 A.M.</item>
+        <item>08:00 A.M.</item>
+        <item>09:00 A.M.</item>
+        <item>10:00 A.M.</item>
+        <item>11:00 A.M.</item>
+        <item>12:00 P.M.</item>
+        <item>01:00 P.M.</item>
+        <item>02:00 P.M.</item>
+        <item>03:00 P.M.</item>
+        <item>04:00 P.M.</item>
+        <item>05:00 P.M.</item>
+        <item>06:00 P.M.</item>
+    </string-array>
+    <string-array name="Asientos_spinner">
+        <item>Un asiento</item>
+        <item>Dos asientos</item>
+        <item>Tres asientos</item>
+        <item>Cuatro asientos</item>
+    </string-array>
+
 
 
 </resources>

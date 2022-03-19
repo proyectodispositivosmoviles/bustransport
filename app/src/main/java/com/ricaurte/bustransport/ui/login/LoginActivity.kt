@@ -21,6 +21,7 @@ class LoginActivity : AppCompatActivity() {
         loginBinding = ActivityLoginBinding.inflate(layoutInflater)
         loginViewModel = ViewModelProvider(this)[LoginViewModel::class.java]
         setContentView(loginBinding.root)
+
         loginViewModel.findUserDone.observe(this) { result ->
             onFindUserDoneSubscribe(result)
         }

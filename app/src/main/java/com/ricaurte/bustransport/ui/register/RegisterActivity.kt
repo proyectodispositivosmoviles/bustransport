@@ -6,7 +6,7 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.ricaurte.bustransport.databinding.ActivityRegisterBinding
 import com.ricaurte.bustransport.ui.login.LoginActivity
-import com.ricaurte.bustransport.ui.registerterm.RegistertermActivity2
+import com.ricaurte.bustransport.ui.registerterms.RegisterTermsActivity
 
 
 class  RegisterActivity : AppCompatActivity() {
@@ -18,12 +18,13 @@ class  RegisterActivity : AppCompatActivity() {
         registerBinding = ActivityRegisterBinding.inflate(layoutInflater)
         registerViewModel = ViewModelProvider(this)[RegisterViewModel::class.java]
         setContentView(registerBinding.root)
+
         registerBinding.returnRegisterButton.setOnClickListener{
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
         registerBinding.termsConditions2TextView.setOnClickListener{
-            val intent = Intent(this, RegistertermActivity2::class.java)
+            val intent = Intent(this, RegisterTermsActivity::class.java)
             startActivity(intent)
         }
         registerViewModel.dataValidated.observe(this) { result ->
