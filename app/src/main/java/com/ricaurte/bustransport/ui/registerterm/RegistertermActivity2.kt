@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.ricaurte.bustransport.databinding.ActivityRegistertermBinding
 import com.ricaurte.bustransport.ui.register.RegisterActivity
 
-class RegistertermActivity : AppCompatActivity() {
+class RegistertermActivity2 : AppCompatActivity() {
 
     private lateinit var registertermBinding: ActivityRegistertermBinding
 
@@ -15,9 +15,9 @@ class RegistertermActivity : AppCompatActivity() {
         registertermBinding = ActivityRegistertermBinding.inflate(layoutInflater)
         setContentView(registertermBinding.root)
 
-       /* registertermBinding.returnConditionButton.setOnClickListener {
+        registertermBinding.returnConditionButton.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
-        }*/
+        }
     }
 }

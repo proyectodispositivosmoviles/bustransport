@@ -6,15 +6,12 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.ricaurte.bustransport.databinding.ActivityRegisterBinding
 import com.ricaurte.bustransport.ui.login.LoginActivity
-import com.ricaurte.bustransport.ui.registerterm.RegistertermActivity
-import kotlin.random.Random
+import com.ricaurte.bustransport.ui.registerterm.RegistertermActivity2
 
 
 class  RegisterActivity : AppCompatActivity() {
     private lateinit var registerBinding: ActivityRegisterBinding
     private lateinit var registerViewModel: RegisterViewModel
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,7 +23,7 @@ class  RegisterActivity : AppCompatActivity() {
             startActivity(intent)
         }
         registerBinding.termsConditions2TextView.setOnClickListener{
-            val intent = Intent(this, RegistertermActivity::class.java)
+            val intent = Intent(this, RegistertermActivity2::class.java)
             startActivity(intent)
         }
         registerViewModel.dataValidated.observe(this) { result ->

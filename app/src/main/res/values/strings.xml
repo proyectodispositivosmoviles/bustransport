@@ -8,7 +8,7 @@
     <string name="repeat_password">Repita la contraseña</string>
     <string name="register">Registrarme</string>
     <string name="sign_out">Cerrar sesión</string>
-    <string name="name">Nombres y Apellidos</string>
+    <string name="name">Nombres:</string>
     <string name="phone">Celular</string>
     <string name="email_text_view">correo</string>
     <string name="autenticado">autenticado</string>
@@ -58,6 +58,9 @@
     <string name="avatarIUser_imageView">vista avatar</string>
     <string name="showUser_textView">"muestra usuario "</string>
     <string name="avatar_imageView">imagen</string>
+    <string name="name_profile">Usuario</string>
+    <string name="username">Nombres</string>
+    <string name="phone_profile">Celular</string>
 
 
 </resources>

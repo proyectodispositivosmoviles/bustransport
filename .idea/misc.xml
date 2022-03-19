@@ -27,13 +27,14 @@
         <entry key="..\:/Users/juans/AndroidStudioProjects/bustransport/app/src/main/res/layout/activity_login.xml" value="0.2" />
         <entry key="..\:/Users/juans/AndroidStudioProjects/bustransport/app/src/main/res/layout/activity_main.xml" value="0.16" />
         <entry key="..\:/Users/juans/AndroidStudioProjects/bustransport/app/src/main/res/layout/activity_register.xml" value="0.2" />
+        <entry key="..\:/Users/juans/AndroidStudioProjects/bustransport/app/src/main/res/layout/activity_registerterm.xml" value="0.1" />
         <entry key="..\:/Users/juans/AndroidStudioProjects/bustransport/app/src/main/res/layout/activity_splash.xml" value="0.1" />
         <entry key="..\:/Users/juans/AndroidStudioProjects/bustransport/app/src/main/res/layout/fragment_approchlocation.xml" value="0.25" />
         <entry key="..\:/Users/juans/AndroidStudioProjects/bustransport/app/src/main/res/layout/fragment_currenttrip.xml" value="0.264" />
         <entry key="..\:/Users/juans/AndroidStudioProjects/bustransport/app/src/main/res/layout/fragment_dashboard.xml" value="0.1" />
         <entry key="..\:/Users/juans/AndroidStudioProjects/bustransport/app/src/main/res/layout/fragment_login.xml" value="0.264" />
         <entry key="..\:/Users/juans/AndroidStudioProjects/bustransport/app/src/main/res/layout/fragment_payconfirmation.xml" value="0.264" />
-        <entry key="..\:/Users/juans/AndroidStudioProjects/bustransport/app/src/main/res/layout/fragment_profile.xml" value="0.264" />
+        <entry key="..\:/Users/juans/AndroidStudioProjects/bustransport/app/src/main/res/layout/fragment_profile.xml" value="0.4" />
         <entry key="..\:/Users/juans/AndroidStudioProjects/bustransport/app/src/main/res/layout/fragment_psepay.xml" value="0.25" />
         <entry key="..\:/Users/juans/AndroidStudioProjects/bustransport/app/src/main/res/layout/fragment_register.xml" value="0.2" />
         <entry key="..\:/Users/juans/AndroidStudioProjects/bustransport/app/src/main/res/layout/fragment_registerterm.xml" value="0.25416666666666665" />
