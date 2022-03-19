@@ -17,7 +17,7 @@ class ProfileFragment : Fragment() {
     companion object {
         fun newInstance() = ProfileFragment()
     }
-    private val user : UserServerRepository()
+
     private lateinit var viewModel: ProfileViewModel
     private lateinit var profileBinder: FragmentProfileBinding
 
@@ -40,7 +40,7 @@ class ProfileFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this)[ProfileViewModel::class.java]
-        Glide.(with).load(user.urlAvatar).into(avatar_imageView)
+
     }
 
 }
