@@ -58,6 +58,7 @@
     <string name="avatarIUser_imageView">vista avatar</string>
     <string name="showUser_textView">"muestra usuario "</string>
     <string name="avatar_imageView">imagen</string>
+    <string name="title_activity_maps">MapsActivity</string>
 
 
 </resources>
