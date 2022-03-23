@@ -50,7 +50,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
         val terminaldelsur = LatLng(6.2167754, -75.5888346)
         mMap.addMarker(MarkerOptions()
-            .icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_marcador2))  .anchor(0.0f,1.0f)
+            //.icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_launcher))  .anchor(0.0f,1.0f)
             .position(terminaldelsur)
             .title("Terminal del sur")
             .snippet("Sotrasabar"))
@@ -59,7 +59,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
         val Parquecaldas = LatLng(6.087429, -75.6450319)
         mMap.addMarker(MarkerOptions()
-            .icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_marcador2))  .anchor(0.0f,1.0f)
+
             .position(Parquecaldas)
             .title("Caldas")
             .snippet("Parque de Caldas:"))
@@ -68,7 +68,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
         val Versalles = LatLng(5.9624484, -75.5891387)
         mMap.addMarker(MarkerOptions()
-            .icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_marcador2))  .anchor(0.0f,1.0f)
+
             .position(Versalles)
             .title("Versalles")
             .snippet("Parrroquia San Roque de Versalles"))
@@ -78,7 +78,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
         val Santabarbara = LatLng(5.8735372, -75.5690521)
         mMap.addMarker(MarkerOptions()
-            .icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_marcador2))  .anchor(0.0f,1.0f)
+            //.icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_launcher_round))  .anchor(0.0f,1.0f)
             .position(Santabarbara)
             .title("Santa Bárbara")
             .snippet("Terminal: Parque Principal de Santa Bárbara"))
