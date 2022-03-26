@@ -54,7 +54,7 @@ class RegisterViewModel : ViewModel() {
                         auth.createUserWithEmailAndPassword(email, password)
                             .addOnCompleteListener { task ->
                                 if (task.isSuccessful) {
-                                    Log.d("Register", "createUserWithEmail:success")
+
                                 }
                             }
                         dataValidate.value = true

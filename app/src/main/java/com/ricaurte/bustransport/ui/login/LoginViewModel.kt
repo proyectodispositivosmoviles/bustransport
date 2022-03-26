@@ -82,14 +82,15 @@ class LoginViewModel() : ViewModel() {
                 auth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener() { task ->
                         if (task.isSuccessful) {
+                           var usuario=auth.currentUser?.email
+                            message.value="el usuario es :,$usuario"
                             dataValidate.value = true
+
                         } else {
-                            message.value = task.exception.toString()
+                            message.value = "Usuario ó Contraseña Incorrectos"
                         }
                     }
             }
-
-
         }
     }
 

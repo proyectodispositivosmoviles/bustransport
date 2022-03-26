@@ -46,6 +46,9 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun onDataValidatedSubscribe(result: Boolean?) {
+       //val usuario= auth.currentUser?.email
+        //val usuario = FirebaseAuth.getInstance().currentUser?.email
+        //Toast.makeText(applicationContext,"usuario es :$usuario",Toast.LENGTH_SHORT).show()
         val intent = Intent(this@LoginActivity,BottomActivity::class.java)
         startActivity(intent)
 
@@ -63,10 +66,8 @@ class LoginActivity : AppCompatActivity() {
         val email=loginBinding.emailEditText.text.toString()
         val password=loginBinding.passwordUpdateEditText.text.toString()
         if (user != null) {
-            //loginViewModel.validateFields(email,password,user)
-        }
+                 }
         else{
-            // Toast.makeText( applicationContext,"Usuario No Existe", Toast.LENGTH_SHORT).show()
             loginViewModel.searchUserInFirebase(email,password)
         }
     }
