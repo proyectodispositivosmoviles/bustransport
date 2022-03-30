@@ -36,42 +36,34 @@ class ProfileFragment : Fragment() {
     ): View {
         profileBinding = FragmentProfileBinding.inflate(inflater, container, false)
         profileViewModel = ViewModelProvider(this)[ProfileViewModel::class.java]
-        return profileBinding.root
         profileViewModel.findUserDone.observe(viewLifecycleOwner){result->onFindUserDoneSuscribe(result)}
         profileViewModel.msgDone.observe(viewLifecycleOwner) { result ->
-            onMsgDoneSubscribe(result)
+            onMsgDoneSubscribe(result)}
+
+        return profileBinding.root
         }
-    }
 
     private fun onFindUserDoneSuscribe(userServer: UserServer) {
-      profileBinding.nameProfileTextView.text=userServer.name
-    }
+      profileBinding.nameProfileTextView.text=userServer.email
+        profileBinding.phoneProfileTextView.text=userServer.phone
+        profileBinding.usernameProfileTextView2.text=userServer.name
+        context?.let { it1 ->
+            Glide.with(it1).load(userServer.urlAvatar
+            )
+                .into(profileBinding.avatarUserImageView)
 
+        }
+
+    }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
 
         with(profileBinding) {
             profileViewModel.searchUserInServer()
-
-            profileBinding.phoneProfileTextView.text = "123456"
-            profileBinding.usernameProfileTextView2.text = "fernando"
-            context?.let { it1 ->
-                Glide.with(it1).load(
-                    "https://firebasestorage.googleapis.com/v0/b/bustransport-d73af.appspot.com/o/useravatars%2Favatar1.webp?alt=media&token=495ac296-40ea-4349-9b64-0f45dc679a49"
-                )
-                    .into(profileBinding.avatarUserImageView)
-
-            }
-
-
-            // }
-
             profileBinding.changeAccountButton.setOnClickListener {
                 findNavController().navigate(ProfileFragmentDirections.actionProfileFragmentToUpdatecountFragment())
-
-
-            }
+           }
         }
     }
     private fun onMsgDoneSubscribe(msg: String?) {

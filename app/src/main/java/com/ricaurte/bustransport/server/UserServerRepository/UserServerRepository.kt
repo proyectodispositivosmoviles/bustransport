@@ -4,6 +4,7 @@ import android.util.Log
 import com.google.android.gms.tasks.Task
 import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.QuerySnapshot
+import com.google.firebase.firestore.SetOptions
 import com.google.firebase.firestore.auth.User
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -41,19 +42,36 @@ class UserServerRepository {
             db.collection("users").get().await()
         }
     }
-       /* val users = db.collection("users")
 
-        // return withContext(Dispatchers.IO){db.collection("users").get()}
-      // return db.collection("users").whereEqualTo("email",email).await()
-        //return users.whereEqualTo("email",email_)
-       return db.collection("users")
-            .whereEqualTo("email", email_)
-            .get()
-            .addOnSuccessListener { documents ->
-                for (document in documents) {
-                    Log.d("mejor", "${document.id} => ${document.data}")
-                }
-            }*/
+    fun updateUser(name: String, phone: String, email: String,  ) {
+        val documentUser = db.collection("users").document()
+
+        val user = UserServer(
+            //uid = documentUser.id,
+            name = name,
+            phone = phone,
+            email = email,
+            //urlAvatar=urlAvatar,
+
+        )
+        db.collection("users").document(email).set(user, SetOptions.merge())
+
+
+
+    }
+    /* val users = db.collection("users")
+
+     // return withContext(Dispatchers.IO){db.collection("users").get()}
+   // return db.collection("users").whereEqualTo("email",email).await()
+     //return users.whereEqualTo("email",email_)
+    return db.collection("users")
+         .whereEqualTo("email", email_)
+         .get()
+         .addOnSuccessListener { documents ->
+             for (document in documents) {
+                 Log.d("mejor", "${document.id} => ${document.data}")
+             }
+         }*/
     }
 
            /*return withContext(Dispatchers.IO) {

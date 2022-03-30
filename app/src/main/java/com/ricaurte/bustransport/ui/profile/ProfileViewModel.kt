@@ -41,30 +41,24 @@ class ProfileViewModel : ViewModel() {
     fun searchUserInServer() {
         val email = FirebaseAuth.getInstance().currentUser?.email.toString()
         GlobalScope.launch(Dispatchers.IO) {
-
-            //message.value="el usuario es: $email"
             val result = userServerRepository.loadUsers()
-            Log.d("mejor", "usuario: $result")
-            var isFoundUser = false
-           /*for (document in result) {
+            //var isFoundUser = false
+           for (document in result) {
                 val userServer: UserServer = document.toObject<UserServer>()
 
                 if (email == userServer.email) {
-                    isFoundUser=true
-                    message.value="si es igual el email"
+                    //isFoundUser=true
+                    Log.d("si","$userServer")
+                    message.postValue("si es igual el email")
                     findUserServer.postValue(userServer)
                    // message.value = "el valor es en profile"
 
                     // Log.d("si","$result")}
-
-
-                    //Toast.makeText(requireContext(),"esto es mejor",Toast.LENGTH_SHORT).show()
-
                 }
 
               // if (!isFoundUser)findUserServer.postValue(null)
-               message.value="nada es igual"
-            }*/
+               message.postValue("nada es igual")
+            }
         }
     }
 }
