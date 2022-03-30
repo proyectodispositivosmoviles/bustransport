@@ -71,20 +71,6 @@ class RegisterViewModel : ViewModel() {
         }
     }
 
-    /*fun saveUser(
-        name: String,
-        phone: String,
-        email: String,
-        password: String,
-
-
-        ) {
-        GlobalScope.launch(Dispatchers.IO) {
-            userRepository.saveuser(name, phone, email, password)
-
-        }
-    }*/
-
     fun saveUserInServer(name: String, phone: String, email: String,urlAvatar:String ) {
         GlobalScope.launch(Dispatchers.IO){
             userServerRepository.saveUser(name, phone,email,urlAvatar)

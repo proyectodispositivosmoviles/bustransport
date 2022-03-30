@@ -38,30 +38,14 @@ class LoginViewModel() : ViewModel() {
     }
 
     fun validateFields(email: String, password: String, ) {
-        //fun validateFields(email: String, password: String, user: User) {
-        /*if (email.isNotEmpty() && password.isNotEmpty() && password == user.password && email.equals(
-                user.email,
-                true
-            )*/
         val valido = validarCorreo(email)
         if (email.isNotEmpty() && password.isNotEmpty()
         ) {
             if (valido) {
-                /*auth= Firebase.auth
-            auth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener() { task ->
-                    if (task.isSuccessful) {
-                        message.value="pude entrar"*/
-
                campsValidate = true
-                //dataValidate.value = true
-                /*} else {
-                        message.value="no pude entrar"
-                        Log.w("registro", "signInWithEmail:failure", task.exception)
-                    }
-                }*/
+
             } else {
-                message.value = "Por Favor Revisa El Formato Del Correo"
+                message.value = "Usuario ó Contraseña Incorrectos"
             }
         } else {
             message.value = "Por Favor Llene Todos Los Campos"
@@ -82,9 +66,7 @@ class LoginViewModel() : ViewModel() {
                 auth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener() { task ->
                         if (task.isSuccessful) {
-                           var usuario=auth.currentUser?.email
-                            message.value="el usuario es :,$usuario"
-                            dataValidate.value = true
+                           dataValidate.value = true
 
                         } else {
                             message.value = "Usuario ó Contraseña Incorrectos"
