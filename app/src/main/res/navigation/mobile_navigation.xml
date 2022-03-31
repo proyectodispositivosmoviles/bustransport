@@ -7,8 +7,8 @@
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.ricaurte.bustransport.ui.profile.ProfileFragment"
-        android:label="@string/title_profile"
-        tools:layout="@layout/fragment_profile" >
+        android:label="Perfil"
+        tools:layout="@layout/fragment_profile">
         <action
             android:id="@+id/action_profileFragment_to_updatecountFragment"
             app:destination="@id/updatecountFragment" />
@@ -26,11 +26,14 @@
         <action
             android:id="@+id/action_reserveFragment_to_approchlocationFragment"
             app:destination="@id/approchlocationFragment" />
+        <action
+            android:id="@+id/action_reserveFragment_to_approchlocation2Fragment"
+            app:destination="@id/approchlocation2Fragment" />
     </fragment>
     <fragment
         android:id="@+id/updatecountFragment"
         android:name="com.ricaurte.bustransport.ui.updatecount.UpdatecountFragment"
-        android:label="Perfil"
+        android:label="Actulización de datos"
         tools:layout="@layout/fragment_updatecount">
         <action
             android:id="@+id/action_updatecountFragment_to_profileFragment"
@@ -46,6 +49,18 @@
             app:destination="@id/psepayFragment" />
         <action
             android:id="@+id/action_approchlocationFragment_to_reserveFragment"
+            app:destination="@id/reserveFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/approchlocation2Fragment"
+        android:name="com.ricaurte.bustransport.ui.approchlocation2.Approchlocation2Fragment"
+        android:label="Mi Viaje"
+        tools:layout="@layout/fragment_approchlocation2">
+        <action
+            android:id="@+id/action_approchlocation2Fragment_to_psepayFragment4"
+            app:destination="@id/psepayFragment" />
+        <action
+            android:id="@+id/action_approchlocation2Fragment_to_reserveFragment3"
             app:destination="@id/reserveFragment" />
     </fragment>
     <fragment
@@ -69,4 +84,5 @@
             android:id="@+id/action_payconfirmationFragment_to_currenttripFragment"
             app:destination="@id/currenttripFragment" />
     </fragment>
+
 </navigation>

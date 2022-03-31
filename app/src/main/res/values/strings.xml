@@ -62,6 +62,10 @@
     <string name="username">Nombres</string>
     <string name="phone_profile">Celular</string>
     <string name="license_plate">Placa:</string>
+    <string name="one_approach_2">Terminal del Sur - Medellin</string>
+    <string name="new_name">Nuevo nombre</string>
+    <string name="New_phone">Nuevo celular</string>
+    <string name="new_phone">Nuevo celular</string>
     <string-array name="Horarios_spinner">
         <item>06:00 A.M.</item>
         <item>07:00 A.M.</item>

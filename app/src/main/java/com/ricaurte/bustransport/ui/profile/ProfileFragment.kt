@@ -31,10 +31,10 @@ class ProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         profileBinder.changeAccountButton.setOnClickListener {
             findNavController().navigate(ProfileFragmentDirections.actionProfileFragmentToUpdatecountFragment())
         }
+
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
