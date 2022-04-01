@@ -49,9 +49,7 @@ class ProfileViewModel : ViewModel() {
                 if (email == userServer.email) {
 
                     findUserServer.postValue(userServer)
-
                 }
-
             }
         }
     }
