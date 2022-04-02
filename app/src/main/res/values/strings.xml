@@ -68,17 +68,8 @@
     <string name="new_phone">Nuevo celular</string>
     <string-array name="Horarios_spinner">
         <item>06:00 A.M.</item>
-        <item>07:00 A.M.</item>
-        <item>08:00 A.M.</item>
-        <item>09:00 A.M.</item>
         <item>10:00 A.M.</item>
-        <item>11:00 A.M.</item>
-        <item>12:00 P.M.</item>
-        <item>01:00 P.M.</item>
         <item>02:00 P.M.</item>
-        <item>03:00 P.M.</item>
-        <item>04:00 P.M.</item>
-        <item>05:00 P.M.</item>
         <item>06:00 P.M.</item>
     </string-array>
     <string-array name="Asientos_spinner">

@@ -37,11 +37,35 @@ class UserServerRepository {
 
 
 
-    suspend fun loadUsers():QuerySnapshot{
+    /*fun updateUser(name: String, phone: String, email: String, ) {
+        val documentUser = db.collection("users").document()
+
+        val user = UserServer(
+            //uid = documentUser.id,
+            name = name,
+            phone = phone,
+            email = email,
+            //urlAvatar=urlAvatar,
+
+        )
+        db.collection("users").document(email).set(user, SetOptions.merge())
+    }
+    suspend fun loadReserve(): QuerySnapshot {
+        return withContext(Dispatchers.IO) {
+            db.collection("reserves").get().await()
+        }
+    }*/
+
+
+
+
+
+    suspend fun loadUsers(): QuerySnapshot {
         return withContext(Dispatchers.IO) {
             db.collection("users").get().await()
         }
     }
+
 
     fun updateUser(name: String, phone: String, email: String,  ) {
         val documentUser = db.collection("users").document()
