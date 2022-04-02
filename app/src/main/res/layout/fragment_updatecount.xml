@@ -85,14 +85,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/phone_profile_text_view2">
 
-        <TextView
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/password_update_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/new_name"
             android:inputType="textPassword"
-            android:textColorHint="#757575"
-            tools:ignore="TouchTargetSizeCheck" />
+            tools:ignore="TextContrastCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -108,13 +107,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password_update_text_input_layout">
 
-        <TextView
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/rep_password_update_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/new_phone"
             android:inputType="textPassword"
-            tools:ignore="TouchTargetSizeCheck" />
+            tools:ignore="TextContrastCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
@@ -122,11 +121,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="96dp"
         android:layout_marginEnd="32dp"
         android:text="@string/update_data"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rep_password_update_text_input_layout" />
 

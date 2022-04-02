@@ -61,8 +61,8 @@ class UpdatecountFragment : Fragment() {
                 val email = FirebaseAuth.getInstance().currentUser?.email.toString()
                 updatecountViewModel.validatefiels(
                     email,
-                    nameUpdateEditText.text.toString(),
-                    phoneUpdateEditText.text.toString(),
+                    nameProfileTextView2.text.toString(),
+                    usernameProfileTextView3.text.toString(),
                     //agree,
                 )
             }
@@ -78,7 +78,7 @@ class UpdatecountFragment : Fragment() {
             val email = FirebaseAuth.getInstance().currentUser?.email.toString()
                 updatecountViewModel.updateUserInServer(
                     usernameTextView.text.toString(),
-                    phoneUpdateEditText.text.toString(),
+                    phoneProfileTextView2.text.toString(),
                 email,
                 passwordUpdateEditText.text.toString(),
                 repPasswordUpdateEditText.text.toString(),
