@@ -33,7 +33,7 @@
     <fragment
         android:id="@+id/updatecountFragment"
         android:name="com.ricaurte.bustransport.ui.updatecount.UpdatecountFragment"
-        android:label="Actulización de datos"
+        android:label="Actualización de datos"
         tools:layout="@layout/fragment_updatecount">
         <action
             android:id="@+id/action_updatecountFragment_to_profileFragment"
