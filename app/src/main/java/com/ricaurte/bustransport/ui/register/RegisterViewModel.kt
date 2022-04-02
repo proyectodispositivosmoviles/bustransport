@@ -54,7 +54,7 @@ class RegisterViewModel : ViewModel() {
                         auth.createUserWithEmailAndPassword(email, password)
                             .addOnCompleteListener { task ->
                                 if (task.isSuccessful) {
-                                    Log.d("Register", "createUserWithEmail:success")
+
                                 }
                             }
                         dataValidate.value = true
@@ -70,20 +70,6 @@ class RegisterViewModel : ViewModel() {
             message.value = "Por Favor Llene Todos Los Campos"
         }
     }
-
-    /*fun saveUser(
-        name: String,
-        phone: String,
-        email: String,
-        password: String,
-
-
-        ) {
-        GlobalScope.launch(Dispatchers.IO) {
-            userRepository.saveuser(name, phone, email, password)
-
-        }
-    }*/
 
     fun saveUserInServer(name: String, phone: String, email: String,urlAvatar:String ) {
         GlobalScope.launch(Dispatchers.IO){

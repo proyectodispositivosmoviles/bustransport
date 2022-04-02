@@ -57,21 +57,7 @@ class  RegisterActivity : AppCompatActivity() {
     private fun onDataValidatedSubscribe(result: Boolean) {
 
         with(registerBinding) {
-            /* registerViewModel.saveUser(
-                 nameUpdateEditText.text.toString(),
-                 phoneUpdateEditText.text.toString(),
-                 emailEditText.text.toString(),
-                 passwordUpdateEditText.text.toString(),
-             )
-           var myRandom= Random.nextInt(until = 5)
-           var myUrl= listOf({
-               "https://firebasestorage.googleapis.com/v0/b/bustransport-d73af.appspot.com/o/useravatars%2Favatar1.webp?alt=media&token=495ac296-40ea-4349-9b64-0f45dc679a49";
-               "https://firebasestorage.googleapis.com/v0/b/bustransport-d73af.appspot.com/o/useravatars%2Favatar2.webp?alt=media&token=63fbe63b-5ca1-4186-87ed-36d003604b85";
-               "https://firebasestorage.googleapis.com/v0/b/bustransport-d73af.appspot.com/o/useravatars%2Favatar3.webp?alt=media&token=2d0225a0-84e6-494f-8c80-d1667650164a";
-               "https://firebasestorage.googleapis.com/v0/b/bustransport-d73af.appspot.com/o/useravatars%2Favatar4.webp?alt=media&token=ccc14165-9b05-46f2-8c6d-fa9d99565df9"})
-           val urlAvatar=myUrl[myRandom]*/
-
-            registerViewModel.saveUserInServer(
+                registerViewModel.saveUserInServer(
                 nameUpdateEditText.text.toString(),
                 phoneUpdateEditText.text.toString(),
                 emailEditText.text.toString(),
