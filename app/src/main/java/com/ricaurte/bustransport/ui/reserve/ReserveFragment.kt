@@ -33,13 +33,16 @@ class ReserveFragment : Fragment() {
 
         with(reserveFragment) {
             continueButton.setOnClickListener {
-                if (reserveFragment.twoRouteRadioButton.isChecked) {
-                    findNavController().navigate(ReserveFragmentDirections.actionReserveFragmentToApprochlocationFragment())
-                }
-                if (reserveFragment.oneRouteRadioButton.isChecked) {
-                    findNavController().navigate(ReserveFragmentDirections.actionReserveFragmentToApprochlocation2Fragment())
-                } else {
-                    Toast.makeText(requireContext(), "Seleccione tu ruta", Toast.LENGTH_SHORT).show()
+                when {
+                    reserveFragment.twoRouteRadioButton.isChecked -> {
+                        findNavController().navigate(ReserveFragmentDirections.actionReserveFragmentToApprochlocationFragment())
+                    }
+                    reserveFragment.oneRouteRadioButton.isChecked -> {
+                        findNavController().navigate(ReserveFragmentDirections.actionReserveFragmentToApprochlocation2Fragment())
+                    }
+                    else -> {
+                        Toast.makeText(requireContext(), "Seleccione tu ruta", Toast.LENGTH_SHORT).show()
+                    }
                 }
             }
         }

@@ -35,8 +35,6 @@ class UserServerRepository {
 
     }
 
-
-
     suspend fun loadUsers():QuerySnapshot{
         return withContext(Dispatchers.IO) {
             db.collection("users").get().await()
@@ -55,9 +53,6 @@ class UserServerRepository {
 
         )
         db.collection("users").document(email).set(user, SetOptions.merge())
-
-
-
     }
     /* val users = db.collection("users")
 
