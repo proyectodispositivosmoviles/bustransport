@@ -4,11 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.ricaurte.bustransport.databinding.FragmentReserveBinding
+import com.ricaurte.bustransport.ui.profile.ProfileViewModel
 
 class ReserveFragment : Fragment() {
 
@@ -16,41 +19,86 @@ class ReserveFragment : Fragment() {
         fun newInstance() = ReserveFragment()
     }
 
-    private lateinit var viewModel: ReserveViewModel
-    private lateinit var reserveFragment: FragmentReserveBinding
+    private lateinit var reserveBinding: FragmentReserveBinding
     private lateinit var reserveViewModel: ReserveViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        reserveFragment = FragmentReserveBinding.inflate(inflater, container, false)
-        return reserveFragment.root
+        reserveBinding = FragmentReserveBinding.inflate(inflater, container, false)
+        reserveViewModel = ViewModelProvider(this)[ReserveViewModel::class.java]
+        reserveViewModel.msgDone.observe(viewLifecycleOwner) { result ->
+            onMsgDoneSubscribe(result)}
+        return reserveBinding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        with(reserveFragment) {
-            continueButton.setOnClickListener {
-                when {
-                    reserveFragment.twoRouteRadioButton.isChecked -> {
-                        findNavController().navigate(ReserveFragmentDirections.actionReserveFragmentToApprochlocationFragment())
-                    }
-                    reserveFragment.oneRouteRadioButton.isChecked -> {
-                        findNavController().navigate(ReserveFragmentDirections.actionReserveFragmentToApprochlocation2Fragment())
-                    }
-                    else -> {
-                        Toast.makeText(requireContext(), "Seleccione tu ruta", Toast.LENGTH_SHORT).show()
-                    }
+        with(reserveBinding) {
+            //seatingSpinner.onItemSelectedListener(AdapterView<?>parente, View view, int position,long id){
+             //  reserveViewModel.showSeatAvailable(seatingSpinner.selectedItem.toString())
+           // }
+            val oneRadioButtonState=oneRouteRadioButton.isChecked
+            val twoRadioButtonState=oneRouteRadioButton.isChecked
+            val hour=seatingSpinner.selectedItem.toString()
+            val numberSeat=reserveChairsSpinner.selectedItem.toString()
+           // var quantity=Integer.parseInt(numberSeat)
+           /* radioGroup.setOnClickListener{
+                Toast.makeText(requireContext(), "Por favor seleccione tu ruta", Toast.LENGTH_SHORT)
+                   .show()
+            }*/
+          //seatingSpinner.setOnClickListener{
+             //   val result=onDataValideted(oneRadioButtonState,twoRadioButtonState,hour,
+               //    numberSeat                     )
+             // Toast.makeText(requireContext(), "Por favor seleccione tu ruta", Toast.LENGTH_SHORT)
+              //    .show()
+          //}
+           reserveBinding.continueButton.setOnClickListener {
+                if (twoRouteRadioButton.isChecked) {
+
+                    onDataValideted(oneRadioButtonState,twoRadioButtonState,hour,
+                       numberSeat                     )
+
+                    findNavController().navigate(ReserveFragmentDirections.actionReserveFragmentToApprochlocationFragment())
+                }
+                if (oneRouteRadioButton.isChecked) {
+                    onDataValideted(oneRadioButtonState,twoRadioButtonState,hour,
+                        numberSeat)
+
+                    findNavController().navigate(ReserveFragmentDirections.actionReserveFragmentToApprochlocation2Fragment())
+                } else {
+
                 }
             }
+
         }
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(ReserveViewModel::class.java)
-        // TODO: Use the ViewModel
+    private fun onDataValideted(
+        oneRadioButtonState: Boolean,
+        twoRadioButtonState: Boolean,
+        hour: String,
+        numberSeat: String,
+
+    ) {
+       reserveViewModel.loadDates(oneRadioButtonState,twoRadioButtonState,hour,numberSeat)
+
+
+        }
+    private fun onMsgDoneSubscribe(msg: String?) {
+        Toast.makeText(
+            requireContext(),
+            msg,
+            Toast.LENGTH_SHORT
+        ).show()
+
     }
 }
+
+
+
+
+
+

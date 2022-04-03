@@ -66,7 +66,7 @@
     <string name="new_name">Nuevo nombre</string>
     <string name="New_phone">Nuevo celular</string>
     <string name="new_phone">Nuevo celular</string>
-    <string name="seats">Disponibles</string>
+    <string name="seats"></string>
     <string name="two_approach_2">Estación Ayura</string>
     <string name="three_approach_3">Itagui - Autopista sur</string>
     <string name="four_approach_2">La estrella - Autopista sur</string>
@@ -77,10 +77,10 @@
         <item>06:00 P.M.</item>
     </string-array>
     <string-array name="Asientos_spinner">
-        <item>Un asiento</item>
-        <item>Dos asientos</item>
-        <item>Tres asientos</item>
-        <item>Cuatro asientos</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
     </string-array>
 
 
