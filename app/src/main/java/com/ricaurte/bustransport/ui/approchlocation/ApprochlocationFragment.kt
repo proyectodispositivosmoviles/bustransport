@@ -17,7 +17,6 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.ricaurte.bustransport.R
 import com.ricaurte.bustransport.databinding.FragmentApprochlocationBinding
-import com.ricaurte.bustransport.ui.approchlocation2.Approchlocation2FragmentDirections
 
 
 class ApprochlocationFragment : Fragment() {
@@ -37,13 +36,14 @@ class ApprochlocationFragment : Fragment() {
          */
         val terminaldelsur = LatLng(6.2167754, -75.5888346)
         googleMap.addMarker(
-            MarkerOptions().position(terminaldelsur).title("Terminal del sur")
-                .snippet("Sotrasabar")
+            MarkerOptions().position(terminaldelsur).title("Terminal del sur - Medellin")
+                .snippet("Taquilla Sotrasabar")
         )
 
         val itagui = LatLng(6.1674364, -75.6076664)
         googleMap.addMarker(
-            MarkerOptions().position(itagui).title("Itagui").snippet("Autopista sur, calle 50")
+            MarkerOptions().position(itagui).title("Itagui - Puente peatonal")
+                .snippet("calle 50, Autopista sur")
                 .icon(
                     BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_VIOLET)
                 )
@@ -51,24 +51,22 @@ class ApprochlocationFragment : Fragment() {
 
         val la_estrella = LatLng(6.153493, -75.630318)
         googleMap.addMarker(
-            MarkerOptions().position(la_estrella).title("La estrella")
-                .snippet("Autopista sur, Convexa").icon(
+            MarkerOptions().position(la_estrella).title("La estrella - Autopista sur")
+                .snippet("79 sur 129, Autopista sur").icon(
                     BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)
                 )
         )
 
         val ayura = LatLng(6.186369, -75.586663)
         googleMap.addMarker(
-            MarkerOptions().position(ayura).title("Ayura")
-                .snippet("Estacion metro Ayura").icon(
+            MarkerOptions().position(ayura).title("Estación - Ayura")
+                .snippet("Estacion metro Ayura - Autopista sur").icon(
                     BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)
                 )
         )
         googleMap.moveCamera(CameraUpdateFactory.newLatLng(ayura))
         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(ayura, 11.5F))
     }
-
-
 
 
     override fun onCreateView(
@@ -99,7 +97,8 @@ class ApprochlocationFragment : Fragment() {
                         findNavController().navigate(ApprochlocationFragmentDirections.actionApprochlocationFragmentToPsepayFragment())
                     }
                     else -> {
-                        Toast.makeText(requireContext(), "Seleccione tu ruta", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(requireContext(), "Seleccione tu ruta", Toast.LENGTH_SHORT)
+                            .show()
                     }
                 }
             }

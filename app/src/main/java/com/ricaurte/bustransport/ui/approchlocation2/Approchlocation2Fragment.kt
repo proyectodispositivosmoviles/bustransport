@@ -30,13 +30,13 @@ class Approchlocation2Fragment : Fragment() {
 
         val Santabarbara = LatLng(5.8735372, -75.5690521)
         googleMap.addMarker(
-            MarkerOptions().position(Santabarbara).title("Santa Bárbara")
-                .snippet("Terminal: Parque Principal")
+            MarkerOptions().position(Santabarbara).title("Terminal Santa Barbara")
+                .snippet("Parque Principal")
         )
 
-        val casablanca = LatLng(5.878338, -75.5699316)
+        val casablanca = LatLng(5.878252, -75.567833)
         googleMap.addMarker(
-            MarkerOptions().position(casablanca).title("Estadero ").snippet("Estadero Casa Blanca")
+            MarkerOptions().position(casablanca).title("Estadero Casa Blanca ").snippet("kilometro 25 via a caldas")
                 .icon(
                     BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)
                 )
@@ -44,7 +44,7 @@ class Approchlocation2Fragment : Fragment() {
 
         val parador = LatLng(5.887469, -75.571577)
         googleMap.addMarker(
-            MarkerOptions().position(parador).title("Via a Caldas").snippet("Parador la Antena")
+            MarkerOptions().position(parador).title("Parador la Antena").snippet("Kilometro 25 via a caldas")
                 .icon(
                     BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_VIOLET)
                 )
@@ -52,7 +52,7 @@ class Approchlocation2Fragment : Fragment() {
 
         val santa_caldas = LatLng(5.881941, -75.571442)
         googleMap.addMarker(
-            MarkerOptions().position(santa_caldas).title("Carrera 50").snippet("Via hacia Caldas")
+            MarkerOptions().position(santa_caldas).title("Carrera 50").snippet("Kilometro 25, hacia Caldas")
                 .icon(
                     BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)
                 )
