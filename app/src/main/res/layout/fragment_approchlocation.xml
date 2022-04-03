@@ -7,6 +7,50 @@
     android:layout_height="match_parent"
     tools:context=".ui.approchlocation.ApprochlocationFragment">
 
+    <ImageView
+        android:id="@+id/magenta_image_view2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/ic_baseline_location_magenta"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/azure_image_view2"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/azure_image_view2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/ic_baseline_location_azure"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/red_image_view2"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/red_image_view2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="90dp"
+        android:src="@drawable/ic_baseline_location_red"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/green_image_view2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/ic_baseline_location_green"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/magenta_image_view2"
+        tools:ignore="ContentDescription,ImageContrastCheck" />
+
     <TextView
         android:id="@+id/choose_site_text_view"
         style="@style/TextViewTitle"
@@ -39,21 +83,22 @@
             style="@style/TextViewTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/two_approach" />
+            android:text="@string/two_approach_2" />
 
         <RadioButton
             android:id="@+id/three_approach_radio_button"
             style="@style/TextViewTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/three_approach" />
+            android:text="@string/three_approach_3" />
 
         <RadioButton
             android:id="@+id/four_approach_radio_button"
             style="@style/TextViewTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/four_approach" />
+            android:text="@string/four_approach_2" />
+
     </RadioGroup>
 
     <androidx.fragment.app.FragmentContainerView

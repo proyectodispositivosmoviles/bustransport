@@ -28,10 +28,10 @@
     <string name="happy_journey">¡FELIZ VIAJE!</string>
     <string name="reserved_data">Datos reservados:</string>
     <string name="choose_site">ELIJA SITIO DE ABORDAJE</string>
-    <string name="one_approach">Terminal Santa Barbara</string>
-    <string name="two_approach">Estacion 1 (carerra 50)</string>
-    <string name="three_approach">Estacion 2 (carrera 50)</string>
-    <string name="four_approach">Estacion 3 (carrera 50)</string>
+    <string name="one_approach">Parador la Antena</string>
+    <string name="two_approach">Carrera 50</string>
+    <string name="three_approach">Casa Blanca</string>
+    <string name="four_approach">Terminal Santa Barbara</string>
     <string name="return_button">Regresar</string>
     <string name="reservation">RESERVA</string>
     <string name="seating">Asientos:</string>
@@ -66,6 +66,10 @@
     <string name="new_name">Nuevo nombre</string>
     <string name="New_phone">Nuevo celular</string>
     <string name="new_phone">Nuevo celular</string>
+    <string name="seats">Disponibles</string>
+    <string name="two_approach_2">Estación Ayura</string>
+    <string name="three_approach_3">Itagui - Autopista sur</string>
+    <string name="four_approach_2">La estrella - Autopista sur</string>
     <string-array name="Horarios_spinner">
         <item>06:00 A.M.</item>
         <item>10:00 A.M.</item>
