@@ -24,7 +24,7 @@
         <entry key="..\:/Users/juans/AndroidStudioProjects/bustransport/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.127" />
         <entry key="..\:/Users/juans/AndroidStudioProjects/bustransport/app/src/main/res/drawable/ic_person.xml" value="0.127" />
         <entry key="..\:/Users/juans/AndroidStudioProjects/bustransport/app/src/main/res/drawable/ic_watch.xml" value="0.127" />
-        <entry key="..\:/Users/juans/AndroidStudioProjects/bustransport/app/src/main/res/layout/activity_bottom.xml" value="0.15263157894736842" />
+        <entry key="..\:/Users/juans/AndroidStudioProjects/bustransport/app/src/main/res/layout/activity_bottom.xml" value="0.2" />
         <entry key="..\:/Users/juans/AndroidStudioProjects/bustransport/app/src/main/res/layout/activity_login.xml" value="0.2" />
         <entry key="..\:/Users/juans/AndroidStudioProjects/bustransport/app/src/main/res/layout/activity_main.xml" value="0.16" />
         <entry key="..\:/Users/juans/AndroidStudioProjects/bustransport/app/src/main/res/layout/activity_register.xml" value="0.2" />
@@ -33,16 +33,16 @@
         <entry key="..\:/Users/juans/AndroidStudioProjects/bustransport/app/src/main/res/layout/activity_splash.xml" value="0.1" />
         <entry key="..\:/Users/juans/AndroidStudioProjects/bustransport/app/src/main/res/layout/fragment_approchlocation.xml" value="0.264" />
         <entry key="..\:/Users/juans/AndroidStudioProjects/bustransport/app/src/main/res/layout/fragment_approchlocation2.xml" value="0.264" />
-        <entry key="..\:/Users/juans/AndroidStudioProjects/bustransport/app/src/main/res/layout/fragment_currenttrip.xml" value="0.264" />
+        <entry key="..\:/Users/juans/AndroidStudioProjects/bustransport/app/src/main/res/layout/fragment_currenttrip.xml" value="0.2" />
         <entry key="..\:/Users/juans/AndroidStudioProjects/bustransport/app/src/main/res/layout/fragment_dashboard.xml" value="0.1" />
         <entry key="..\:/Users/juans/AndroidStudioProjects/bustransport/app/src/main/res/layout/fragment_login.xml" value="0.264" />
         <entry key="..\:/Users/juans/AndroidStudioProjects/bustransport/app/src/main/res/layout/fragment_maps.xml" value="0.264" />
-        <entry key="..\:/Users/juans/AndroidStudioProjects/bustransport/app/src/main/res/layout/fragment_payconfirmation.xml" value="0.264" />
-        <entry key="..\:/Users/juans/AndroidStudioProjects/bustransport/app/src/main/res/layout/fragment_profile.xml" value="0.2" />
-        <entry key="..\:/Users/juans/AndroidStudioProjects/bustransport/app/src/main/res/layout/fragment_psepay.xml" value="0.25" />
+        <entry key="..\:/Users/juans/AndroidStudioProjects/bustransport/app/src/main/res/layout/fragment_payconfirmation.xml" value="0.14035087719298245" />
+        <entry key="..\:/Users/juans/AndroidStudioProjects/bustransport/app/src/main/res/layout/fragment_profile.xml" value="0.18518518518518517" />
+        <entry key="..\:/Users/juans/AndroidStudioProjects/bustransport/app/src/main/res/layout/fragment_psepay.xml" value="0.264" />
         <entry key="..\:/Users/juans/AndroidStudioProjects/bustransport/app/src/main/res/layout/fragment_register.xml" value="0.2" />
         <entry key="..\:/Users/juans/AndroidStudioProjects/bustransport/app/src/main/res/layout/fragment_registerterm.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/juans/AndroidStudioProjects/bustransport/app/src/main/res/layout/fragment_reserve.xml" value="0.264" />
+        <entry key="..\:/Users/juans/AndroidStudioProjects/bustransport/app/src/main/res/layout/fragment_reserve.xml" value="0.176" />
         <entry key="..\:/Users/juans/AndroidStudioProjects/bustransport/app/src/main/res/layout/fragment_triplist.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/juans/AndroidStudioProjects/bustransport/app/src/main/res/layout/fragment_updatecount.xml" value="0.264" />
         <entry key="..\:/Users/juans/AndroidStudioProjects/bustransport/app/src/main/res/layout/register_terms_activity.xml" value="0.13055555555555556" />
