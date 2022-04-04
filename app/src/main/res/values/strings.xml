@@ -70,6 +70,12 @@
     <string name="two_approach_2">Estación Ayura</string>
     <string name="three_approach_3">Itagui - Autopista sur</string>
     <string name="four_approach_2">La estrella - Autopista sur</string>
+    <string name="route_2">Ruta escogida</string>
+    <string name="seating_2">Asientos escogidos</string>
+    <string name="hout_2">Hora escogida</string>
+    <string name="location_2">Ubicación escogida</string>
+    <string name="value_2">Valor a pagar</string>
+    <string name="license_plate_2">Placa de vehiculo</string>
     <string-array name="Horarios_spinner">
         <item>06:00 A.M.</item>
         <item>10:00 A.M.</item>

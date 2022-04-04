@@ -1,117 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.profile.ProfileFragment">
+    android:fillViewport="true">
 
-    <TextView
-        android:id="@+id/profile_text_view"
-        style="@style/TextViewTitle"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="@string/profile"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:context=".ui.profile.ProfileFragment">
 
-    <TextView
-        android:id="@+id/username_text_view"
-        style="@style/TextViewTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="184dp"
-        android:text="@string/Username"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile_text_view" />
+        <TextView
+            android:id="@+id/profile_text_view"
+            style="@style/TextViewTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/profile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/name_text_view"
-        style="@style/TextViewTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="52dp"
-        android:text="@string/name"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username_text_view" />
+        <TextView
+            android:id="@+id/username_text_view"
+            style="@style/TextViewTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="184dp"
+            android:text="@string/Username"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profile_text_view" />
 
-    <TextView
-        android:id="@+id/phone_text_view"
-        style="@style/TextViewTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="44dp"
-        android:text="@string/phone"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name_text_view" />
+        <TextView
+            android:id="@+id/name_text_view"
+            style="@style/TextViewTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="52dp"
+            android:text="@string/name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/username_text_view" />
 
-    <Button
-        android:id="@+id/change_account_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:text="@string/change_account"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phone_text_view" />
+        <TextView
+            android:id="@+id/phone_text_view"
+            style="@style/TextViewTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="44dp"
+            android:text="@string/phone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/name_text_view" />
 
-    <ImageView
-        android:id="@+id/avatarUser_imageView"
-        android:layout_width="114dp"
-        android:layout_height="108dp"
-        android:src="@drawable/ic_person"
-        app:layout_constraintBottom_toTopOf="@+id/username_text_view"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile_text_view"
-        android:contentDescription="@string/avatar_imageView" />
+        <Button
+            android:id="@+id/change_account_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:text="@string/change_account"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/phone_text_view" />
 
-    <TextView
-        android:id="@+id/name_profile_text_view"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="184dp"
-        android:layout_marginEnd="8dp"
-        android:text="@string/name_profile"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.121"
-        app:layout_constraintStart_toEndOf="@+id/username_text_view"
-        app:layout_constraintTop_toBottomOf="@+id/profile_text_view" />
+        <ImageView
+            android:id="@+id/avatarUser_imageView"
+            android:layout_width="114dp"
+            android:layout_height="108dp"
+            android:contentDescription="@string/avatar_imageView"
+            android:src="@drawable/ic_person"
+            app:layout_constraintBottom_toTopOf="@+id/username_text_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profile_text_view" />
 
-    <TextView
-        android:id="@+id/username_profile_text_view2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="52dp"
-        android:layout_marginEnd="8dp"
-        android:text="@string/username"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/name_text_view"
-        app:layout_constraintTop_toBottomOf="@+id/username_text_view" />
+        <TextView
+            android:id="@+id/name_profile_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="184dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/name_profile"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.121"
+            app:layout_constraintStart_toEndOf="@+id/username_text_view"
+            app:layout_constraintTop_toBottomOf="@+id/profile_text_view" />
 
-    <TextView
-        android:id="@+id/phone_profile_text_view"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="8dp"
-        android:text="@string/phone_profile"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/phone_text_view"
-        app:layout_constraintTop_toBottomOf="@+id/name_text_view" />
+        <TextView
+            android:id="@+id/username_profile_text_view2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="52dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/username"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/name_text_view"
+            app:layout_constraintTop_toBottomOf="@+id/username_text_view" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/phone_profile_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="44dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/phone_profile"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/phone_text_view"
+            app:layout_constraintTop_toBottomOf="@+id/name_text_view" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

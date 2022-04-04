@@ -1,145 +1,152 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/frameLayout3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.approchlocation.ApprochlocationFragment">
+    android:fillViewport="true">
 
-    <ImageView
-        android:id="@+id/magenta_image_view2"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/frameLayout3"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="24dp"
-        android:src="@drawable/ic_baseline_location_magenta"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/azure_image_view2"
-        tools:ignore="ContentDescription" />
+        tools:context=".ui.approchlocation.ApprochlocationFragment">
 
-    <ImageView
-        android:id="@+id/azure_image_view2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="24dp"
-        android:src="@drawable/ic_baseline_location_azure"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/red_image_view2"
-        tools:ignore="ContentDescription" />
-
-    <ImageView
-        android:id="@+id/red_image_view2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="90dp"
-        android:src="@drawable/ic_baseline_location_red"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="ContentDescription" />
-
-    <ImageView
-        android:id="@+id/green_image_view2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="24dp"
-        android:src="@drawable/ic_baseline_location_green"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/magenta_image_view2"
-        tools:ignore="ContentDescription,ImageContrastCheck" />
-
-    <TextView
-        android:id="@+id/choose_site_text_view"
-        style="@style/TextViewTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="@string/choose_site"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <RadioGroup
-        android:id="@+id/radioGroup1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/choose_site_text_view">
-
-        <RadioButton
-            android:id="@+id/one_approach_radio_button"
-            style="@style/TextViewTitle"
-            android:layout_width="match_parent"
+        <ImageView
+            android:id="@+id/magenta_image_view2"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/one_approach_2" />
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="24dp"
+            android:src="@drawable/ic_baseline_location_magenta"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/azure_image_view2"
+            tools:ignore="ContentDescription" />
 
-        <RadioButton
-            android:id="@+id/two_approach_radio_button"
-            style="@style/TextViewTitle"
-            android:layout_width="match_parent"
+        <ImageView
+            android:id="@+id/azure_image_view2"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/two_approach_2" />
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="24dp"
+            android:src="@drawable/ic_baseline_location_azure"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/red_image_view2"
+            tools:ignore="ContentDescription" />
 
-        <RadioButton
-            android:id="@+id/three_approach_radio_button"
-            style="@style/TextViewTitle"
-            android:layout_width="match_parent"
+        <ImageView
+            android:id="@+id/red_image_view2"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/three_approach_3" />
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="90dp"
+            android:src="@drawable/ic_baseline_location_red"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
 
-        <RadioButton
-            android:id="@+id/four_approach_radio_button"
-            style="@style/TextViewTitle"
-            android:layout_width="match_parent"
+        <ImageView
+            android:id="@+id/green_image_view2"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/four_approach_2" />
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="24dp"
+            android:src="@drawable/ic_baseline_location_green"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/magenta_image_view2"
+            tools:ignore="ContentDescription,ImageContrastCheck" />
 
-    </RadioGroup>
+        <TextView
+            android:id="@+id/choose_site_text_view"
+            style="@style/TextViewTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/choose_site"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.fragment.app.FragmentContainerView
+        <RadioGroup
+            android:id="@+id/radioGroup1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/choose_site_text_view">
 
-        android:id="@+id/map"
-        android:name="com.google.android.gms.maps.SupportMapFragment"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_margin="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_weight="1"
-        app:layout_constraintBottom_toTopOf="@+id/continue_three_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup1"
-        tools:context=".ui.maps.MapsFragment"/>
+            <RadioButton
+                android:id="@+id/one_approach_radio_button"
+                style="@style/TextViewTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/one_approach_2" />
 
-    <Button
-        android:id="@+id/return_one_button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="550dp"
-        android:layout_marginEnd="16dp"
-        android:text="@string/return_button"
-        app:layout_constraintEnd_toStartOf="@+id/continue_three_button"
-        app:layout_constraintHorizontal_bias="0.657"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <RadioButton
+                android:id="@+id/two_approach_radio_button"
+                style="@style/TextViewTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/two_approach_2" />
 
-    <Button
-        android:id="@+id/continue_three_button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="550dp"
-        android:layout_marginEnd="32dp"
-        android:text="@string/continue1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/return_one_button"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <RadioButton
+                android:id="@+id/three_approach_radio_button"
+                style="@style/TextViewTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/three_approach_3" />
+
+            <RadioButton
+                android:id="@+id/four_approach_radio_button"
+                style="@style/TextViewTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/four_approach_2" />
+
+        </RadioGroup>
+
+        <androidx.fragment.app.FragmentContainerView
+
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            app:layout_constraintBottom_toTopOf="@+id/continue_three_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup1"
+            tools:context=".ui.maps.MapsFragment" />
+
+        <Button
+            android:id="@+id/return_one_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="550dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/return_button"
+            app:layout_constraintEnd_toStartOf="@+id/continue_three_button"
+            app:layout_constraintHorizontal_bias="0.657"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/continue_three_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="550dp"
+            android:layout_marginEnd="32dp"
+            android:text="@string/continue1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/return_one_button"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
