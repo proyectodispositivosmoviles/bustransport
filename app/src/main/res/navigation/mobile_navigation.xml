@@ -50,9 +50,6 @@
         <action
             android:id="@+id/action_approchlocationFragment_to_reserveFragment"
             app:destination="@id/reserveFragment" />
-        <argument
-            android:name="idReserveDone"
-            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/approchlocation2Fragment"

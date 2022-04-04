@@ -54,7 +54,6 @@ class UserServerRepository {
             phone = phone,
             email = email,
             //urlAvatar=urlAvatar,
-
         )
         db.collection("users").document(email).set(user, SetOptions.merge())
 

@@ -62,7 +62,7 @@ class ReserveViewModel : ViewModel() {
                                         val fecha="03/03/22"
                                      saverReserve(email, fecha, itiId, quantity,idRoute)
                                         if (itiId != null) {
-                                            updateItinerary(itineraryServer,hour,quantity)
+                                            //updateItinerary(itineraryServer,hour,quantity)
                                             result = userServerRepository.loadReserve()
                                              for (document in result){
                                                 val reserveServer:ReserveServer=document.toObject<ReserveServer>()

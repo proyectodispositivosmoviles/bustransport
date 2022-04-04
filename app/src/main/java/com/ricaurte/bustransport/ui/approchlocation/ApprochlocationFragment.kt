@@ -22,7 +22,7 @@ import com.ricaurte.bustransport.ui.reserve.ReserveViewModel
 
 class ApprochlocationFragment : Fragment() {
 
-    private val  arg: ApprochlocationFragmentArgs by navArgs()
+    //private val  arg: ApprochlocationFragmentArgs by navArgs()
 
     private lateinit var approchlocationViewModel: ApprochlocationViewModel
     private lateinit var approchlocationBinding: FragmentApprochlocationBinding
@@ -85,11 +85,7 @@ class ApprochlocationFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
         mapFragment?.getMapAsync(callback)
-        Toast.makeText(
-            requireContext(),
-            "$arg",
-            Toast.LENGTH_SHORT
-        ).show()
+
         with(approchlocationBinding) {
             continueThreeButton.setOnClickListener {
                 when {

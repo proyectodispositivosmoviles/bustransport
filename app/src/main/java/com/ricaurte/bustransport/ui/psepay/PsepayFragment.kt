@@ -39,7 +39,7 @@ class PsepayFragment : Fragment() {
        // psepayViewModel.loadDate()
 
         psepayBinding.returnOneButton.setOnClickListener {
-            findNavController().navigate(PsepayFragmentDirections.actionPsepayFragmentToApprochlocationFragment("as"))
+            findNavController().navigate(PsepayFragmentDirections.actionPsepayFragmentToApprochlocationFragment())
         }
 
         psepayBinding.continueThreeButton.setOnClickListener {
