@@ -83,7 +83,7 @@ class UserServerRepository {
         quantity: Int,
         idRoute: String?,
 
-        ) {
+        ): String {
         val documentReserve = db.collection("reserves").document()
             val reserve = ReserveServer(
             rid =idRoute,
@@ -94,6 +94,7 @@ class UserServerRepository {
            quantity = quantity,
             )
         db.collection("reserves").document(documentReserve.id).set(reserve)
+        return  documentReserve.id
 
     }
 

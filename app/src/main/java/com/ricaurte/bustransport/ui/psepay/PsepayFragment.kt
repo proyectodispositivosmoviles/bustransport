@@ -7,10 +7,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.ricaurte.bustransport.R
 import com.ricaurte.bustransport.databinding.FragmentProfileBinding
 import com.ricaurte.bustransport.databinding.FragmentPsepayBinding
 import com.ricaurte.bustransport.ui.profile.ProfileFragmentDirections
+import com.ricaurte.bustransport.ui.reserve.ReserveFragment
+import com.ricaurte.bustransport.ui.reserve.ReserveFragmentDirections
 import com.ricaurte.bustransport.ui.reserve.ReserveViewModel
 import com.ricaurte.bustransport.ui.updatecount.UpdatecountFragmentDirections
 
@@ -33,10 +36,10 @@ class PsepayFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        psepayViewModel.loadDate()
+       // psepayViewModel.loadDate()
 
         psepayBinding.returnOneButton.setOnClickListener {
-            findNavController().navigate(PsepayFragmentDirections.actionPsepayFragmentToApprochlocationFragment())
+            findNavController().navigate(PsepayFragmentDirections.actionPsepayFragmentToApprochlocationFragment("as"))
         }
 
         psepayBinding.continueThreeButton.setOnClickListener {

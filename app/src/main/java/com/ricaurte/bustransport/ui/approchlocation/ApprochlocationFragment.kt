@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMapOptions
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -18,10 +19,11 @@ import com.google.android.gms.maps.model.MarkerOptions
 import com.ricaurte.bustransport.R
 import com.ricaurte.bustransport.databinding.FragmentApprochlocationBinding
 
-
 class ApprochlocationFragment : Fragment() {
 
-    private lateinit var viewModel: ApprochlocationViewModel
+    private val  arg: ApprochlocationFragmentArgs by navArgs()
+
+    private lateinit var approchlocationViewModel: ApprochlocationViewModel
     private lateinit var approchlocationBinding: FragmentApprochlocationBinding
     val options = GoogleMapOptions()
     private val callback = OnMapReadyCallback { googleMap ->
@@ -81,6 +83,11 @@ class ApprochlocationFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
         mapFragment?.getMapAsync(callback)
+        /*Toast.makeText(
+            requireContext(),
+            "$arg",
+            Toast.LENGTH_SHORT
+        ).show()*/
         with(approchlocationBinding) {
             continueThreeButton.setOnClickListener {
                 when {
@@ -110,9 +117,10 @@ class ApprochlocationFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(ApprochlocationViewModel::class.java)
+        approchlocationViewModel = ViewModelProvider(this).get(ApprochlocationViewModel::class.java)
         // TODO: Use the ViewModel
     }
+
 
 
 }

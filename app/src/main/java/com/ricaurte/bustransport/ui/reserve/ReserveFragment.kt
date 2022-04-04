@@ -20,7 +20,7 @@ class ReserveFragment : Fragment() {
         fun newInstance() = ReserveFragment()
     }
 
-    private lateinit var idReservedone:String
+    private lateinit var idReserveDone:String
     private lateinit var reserveBinding: FragmentReserveBinding
     private lateinit var reserveViewModel: ReserveViewModel
 
@@ -57,7 +57,7 @@ class ReserveFragment : Fragment() {
                     onDataValideted(oneRadioButtonState,twoRadioButtonState,hour,
                        numberSeat                     )
 
-                    findNavController().navigate(ReserveFragmentDirections.actionReserveFragmentToApprochlocationFragment())
+                    findNavController().navigate(ReserveFragmentDirections.actionReserveFragmentToApprochlocationFragment("asd"))
                 }
                 if (oneRouteRadioButton.isChecked) {
                     onDataValideted(oneRadioButtonState,twoRadioButtonState,hour,
@@ -66,16 +66,15 @@ class ReserveFragment : Fragment() {
                     findNavController().navigate(ReserveFragmentDirections.actionReserveFragmentToApprochlocation2Fragment())
                 } else {
                     reserveViewModel.enviarMensaje()
-
                 }
             }
-
         }
     }
 
     private fun onIdReserveCreated(result: String?) {
+        idReserveDone="asdf"
         if (result != null) {
-            idReservedone=result
+
         }
 
     }

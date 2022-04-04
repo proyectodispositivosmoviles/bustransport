@@ -55,10 +55,11 @@ class ReserveViewModel : ViewModel() {
                                         val itiId=itineraryServer.id
 
                                         val fecha="03/03/22"
-                                     saverReserve(email, fecha, itiId, quantity,idRoute)
+                                     val reserveCreated=saverReserve(email, fecha, itiId, quantity,idRoute)
                                         if (itiId != null) {
                                             updateItinerary(itineraryServer,hour,quantity)
                                         }
+                                     idReserve.value="asdf"
                                     }
                                 }
                             }
