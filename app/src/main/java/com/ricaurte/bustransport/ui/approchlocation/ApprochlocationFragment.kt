@@ -18,6 +18,7 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.ricaurte.bustransport.R
 import com.ricaurte.bustransport.databinding.FragmentApprochlocationBinding
+import com.ricaurte.bustransport.ui.reserve.ReserveViewModel
 
 class ApprochlocationFragment : Fragment() {
 
@@ -76,6 +77,7 @@ class ApprochlocationFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         approchlocationBinding = FragmentApprochlocationBinding.inflate(inflater, container, false)
+        approchlocationViewModel = ViewModelProvider(this)[ApprochlocationViewModel::class.java]
         return approchlocationBinding.root
     }
 
@@ -83,11 +85,11 @@ class ApprochlocationFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
         mapFragment?.getMapAsync(callback)
-        /*Toast.makeText(
+        Toast.makeText(
             requireContext(),
             "$arg",
             Toast.LENGTH_SHORT
-        ).show()*/
+        ).show()
         with(approchlocationBinding) {
             continueThreeButton.setOnClickListener {
                 when {
@@ -104,7 +106,7 @@ class ApprochlocationFragment : Fragment() {
                         findNavController().navigate(ApprochlocationFragmentDirections.actionApprochlocationFragmentToPsepayFragment())
                     }
                     else -> {
-                        Toast.makeText(requireContext(), "Seleccione tu ruta", Toast.LENGTH_SHORT)
+                        Toast.makeText(requireContext(), "Seleccione tu punto de abordaje", Toast.LENGTH_SHORT)
                             .show()
                     }
                 }
@@ -115,11 +117,7 @@ class ApprochlocationFragment : Fragment() {
         }
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        approchlocationViewModel = ViewModelProvider(this).get(ApprochlocationViewModel::class.java)
-        // TODO: Use the ViewModel
-    }
+
 
 
 

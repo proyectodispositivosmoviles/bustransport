@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.ktx.toObject
 import com.ricaurte.bustransport.server.ItineraryServer
+import com.ricaurte.bustransport.server.ReserveServer
 import com.ricaurte.bustransport.server.RouteServer
 import com.ricaurte.bustransport.server.UserServer
 import com.ricaurte.bustransport.server.UserServerRepository.UserServerRepository
@@ -24,8 +25,6 @@ class ReserveViewModel : ViewModel() {
     val dataValidated: LiveData<Int> = dataValidate
     private val idReserve: MutableLiveData<String> = MutableLiveData()
     val IdReserveCreated: LiveData<String> = idReserve
-
-
     fun loadDates(
         oneRadioButtonState: Boolean,
         twoRadioButtonState: Boolean,
@@ -33,14 +32,20 @@ class ReserveViewModel : ViewModel() {
         quantity: String
     ) {
         GlobalScope.launch(Dispatchers.IO) {
+            var resultReserve=userServerRepository.loadReserve()
+            var arrayReserveInicial=ArrayList<String>()
 
-            var result = userServerRepository.loaditinerary()
-            for (document in result) {
+            for (document in resultReserve){
+                val reserveServer:ReserveServer=document.toObject<ReserveServer>()
+                reserveServer.rid?.let { arrayReserveInicial.add(it) }
+            }
+            var resultItinerary = userServerRepository.loaditinerary()
+            for (document in resultItinerary) {
                 val itineraryServer: ItineraryServer = document.toObject<ItineraryServer>()
                 if (hour == itineraryServer.departureTime) {
                     //findItineraryServer.postValue(itineraryServer)
-                    result = userServerRepository.loadRoute()
-                    for (document in result) {
+                    resultItinerary = userServerRepository.loadRoute()
+                    for (document in resultItinerary) {
                         val routeServer: RouteServer = document.toObject<RouteServer>()
                         if (itineraryServer.idRoute == routeServer.rid) {
                             val idRoute = routeServer.rid
@@ -48,18 +53,32 @@ class ReserveViewModel : ViewModel() {
                            // Log.d("si", " $ya, route $ya")
                             val email = FirebaseAuth.getInstance().currentUser?.email.toString()
                             GlobalScope.launch(Dispatchers.IO) {
-                                val result = userServerRepository.loadUsers()
+                                var result = userServerRepository.loadUsers()
                                 for (document in result) {
                                     val userServer: UserServer = document.toObject<UserServer>()
                                     if (email == userServer.email) {
                                         val itiId=itineraryServer.id
 
                                         val fecha="03/03/22"
-                                     val reserveCreated=saverReserve(email, fecha, itiId, quantity,idRoute)
+                                     saverReserve(email, fecha, itiId, quantity,idRoute)
                                         if (itiId != null) {
                                             updateItinerary(itineraryServer,hour,quantity)
+                                            result = userServerRepository.loadReserve()
+                                             for (document in result){
+                                                val reserveServer:ReserveServer=document.toObject<ReserveServer>()
+                                                for (indice in arrayReserveInicial){
+                                                    if (indice!=reserveServer.rid){
+                                                        idReserve.value=indice
+
+                                                    }
+                                                }
+                                            }
+
+
+
+
                                         }
-                                     idReserve.value="asdf"
+
                                     }
                                 }
                             }

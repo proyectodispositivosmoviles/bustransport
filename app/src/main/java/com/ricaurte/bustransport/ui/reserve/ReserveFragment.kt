@@ -53,11 +53,10 @@ class ReserveFragment : Fragment() {
             val numberSeat=reserveChairsSpinner.selectedItem.toString()
            reserveBinding.continueButton.setOnClickListener {
                 if (twoRouteRadioButton.isChecked) {
-
                     onDataValideted(oneRadioButtonState,twoRadioButtonState,hour,
                        numberSeat                     )
 
-                    findNavController().navigate(ReserveFragmentDirections.actionReserveFragmentToApprochlocationFragment("asd"))
+                    findNavController().navigate(ReserveFragmentDirections.actionReserveFragmentToApprochlocationFragment(idReserveDone))
                 }
                 if (oneRouteRadioButton.isChecked) {
                     onDataValideted(oneRadioButtonState,twoRadioButtonState,hour,
@@ -72,8 +71,9 @@ class ReserveFragment : Fragment() {
     }
 
     private fun onIdReserveCreated(result: String?) {
-        idReserveDone="asdf"
+
         if (result != null) {
+            idReserveDone=result
 
         }
 

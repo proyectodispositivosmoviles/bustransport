@@ -83,7 +83,7 @@ class UserServerRepository {
         quantity: Int,
         idRoute: String?,
 
-        ): String {
+        ) {
         val documentReserve = db.collection("reserves").document()
             val reserve = ReserveServer(
             rid =idRoute,
@@ -94,7 +94,6 @@ class UserServerRepository {
            quantity = quantity,
             )
         db.collection("reserves").document(documentReserve.id).set(reserve)
-        return  documentReserve.id
 
     }
 
@@ -104,18 +103,20 @@ class UserServerRepository {
 
          if (current != null) {
              current=current-quantityInt
-            val itineraryUpdatede=ItineraryServer(
-                availableSeat=10,
-                carNumber=itinerary.carNumber,
-                departureDate=itinerary.departureDate,
-                departureTime=itinerary.departureTime,
-                id=itinerary.id,
-                idRoute=itinerary.idRoute
-            )
-             db.collection("itinerary").document().update("availableSeat",10) //update("$id/availableSeat",current)
+             val pathIti=itinerary.id
+
+             db.collection("itinerary/$pathIti").document().update("availableSeat",current) //update("$id/availableSeat",current)
 
         }
 
+
+
+    }
+
+    suspend fun loadReserve(): QuerySnapshot {
+        return withContext(Dispatchers.IO) {
+            db.collection("reserves").get().await()
+        }
 
 
     }
