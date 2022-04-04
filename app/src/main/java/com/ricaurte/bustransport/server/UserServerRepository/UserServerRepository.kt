@@ -102,10 +102,7 @@ class UserServerRepository {
 
          if (current != null) {
              current=current-quantityInt
-             val pathIti=itinerary.id
-
-             db.collection("itinerary/$pathIti").document().update("availableSeat",current) //update("$id/availableSeat",current)
-
+           //  db.collection("itinerary").document().update("availableSeat",current)
         }
 
 

@@ -69,7 +69,7 @@ class UpdatecountViewModel : ViewModel() {
         //urlAvatar: String
     ) {
         GlobalScope.launch(Dispatchers.IO) {
-            userServerRepository.updateUser(name, phone, email)
+            //userServerRepository.updateUser(name, phone, email)
         }
 
     }

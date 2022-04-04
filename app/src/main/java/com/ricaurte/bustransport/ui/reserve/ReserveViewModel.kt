@@ -49,8 +49,6 @@ class ReserveViewModel : ViewModel() {
                         val routeServer: RouteServer = document.toObject<RouteServer>()
                         if (itineraryServer.idRoute == routeServer.rid) {
                             val idRoute = routeServer.rid
-                            val rou = routeServer.rid
-                           // Log.d("si", " $ya, route $ya")
                             val email = FirebaseAuth.getInstance().currentUser?.email.toString()
                             GlobalScope.launch(Dispatchers.IO) {
                                 var result = userServerRepository.loadUsers()
@@ -63,7 +61,7 @@ class ReserveViewModel : ViewModel() {
                                      saverReserve(email, fecha, itiId, quantity,idRoute)
                                         if (itiId != null) {
                                             //updateItinerary(itineraryServer,hour,quantity)
-                                            result = userServerRepository.loadReserve()
+                                          /* result = userServerRepository.loadReserve()
                                              for (document in result){
                                                 val reserveServer:ReserveServer=document.toObject<ReserveServer>()
                                                 for (indice in arrayReserveInicial){
@@ -72,7 +70,7 @@ class ReserveViewModel : ViewModel() {
 
                                                     }
                                                 }
-                                            }
+                                            }*/
 
 
 
