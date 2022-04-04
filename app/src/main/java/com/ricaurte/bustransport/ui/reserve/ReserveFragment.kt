@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.core.view.get
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -19,6 +20,7 @@ class ReserveFragment : Fragment() {
         fun newInstance() = ReserveFragment()
     }
 
+    private lateinit var idReservedone:String
     private lateinit var reserveBinding: FragmentReserveBinding
     private lateinit var reserveViewModel: ReserveViewModel
 
@@ -35,26 +37,20 @@ class ReserveFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        reserveViewModel.IdReserveCreated .observe(viewLifecycleOwner) { result ->
+            onIdReserveCreated(result)
+        }
 
         with(reserveBinding) {
             //seatingSpinner.onItemSelectedListener(AdapterView<?>parente, View view, int position,long id){
              //  reserveViewModel.showSeatAvailable(seatingSpinner.selectedItem.toString())
            // }
+
+
             val oneRadioButtonState=oneRouteRadioButton.isChecked
             val twoRadioButtonState=oneRouteRadioButton.isChecked
             val hour=seatingSpinner.selectedItem.toString()
             val numberSeat=reserveChairsSpinner.selectedItem.toString()
-           // var quantity=Integer.parseInt(numberSeat)
-           /* radioGroup.setOnClickListener{
-                Toast.makeText(requireContext(), "Por favor seleccione tu ruta", Toast.LENGTH_SHORT)
-                   .show()
-            }*/
-          //seatingSpinner.setOnClickListener{
-             //   val result=onDataValideted(oneRadioButtonState,twoRadioButtonState,hour,
-               //    numberSeat                     )
-             // Toast.makeText(requireContext(), "Por favor seleccione tu ruta", Toast.LENGTH_SHORT)
-              //    .show()
-          //}
            reserveBinding.continueButton.setOnClickListener {
                 if (twoRouteRadioButton.isChecked) {
 
@@ -69,11 +65,19 @@ class ReserveFragment : Fragment() {
 
                     findNavController().navigate(ReserveFragmentDirections.actionReserveFragmentToApprochlocation2Fragment())
                 } else {
+                    reserveViewModel.enviarMensaje()
 
                 }
             }
 
         }
+    }
+
+    private fun onIdReserveCreated(result: String?) {
+        if (result != null) {
+            idReservedone=result
+        }
+
     }
 
     private fun onDataValideted(
@@ -94,6 +98,10 @@ class ReserveFragment : Fragment() {
             Toast.LENGTH_SHORT
         ).show()
 
+    }
+    fun onItemSelected(parent: AdapterView<*>, view: View?, pos: Int, id: Long): Any? {
+        // An item was selected. You can retrieve the selected item using
+         return parent.getItemAtPosition(pos)
     }
 }
 

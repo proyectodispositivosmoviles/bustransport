@@ -22,8 +22,8 @@ class ReserveViewModel : ViewModel() {
     val msgDone: LiveData<String> = message
     private val dataValidate: MutableLiveData<Int> = MutableLiveData()
     val dataValidated: LiveData<Int> = dataValidate
-    private val findItineraryServer: MutableLiveData<ItineraryServer> = MutableLiveData()
-    val findItineraryDone: LiveData<ItineraryServer> = findItineraryServer
+    private val idReserve: MutableLiveData<String> = MutableLiveData()
+    val IdReserveCreated: LiveData<String> = idReserve
 
 
     fun loadDates(
@@ -56,6 +56,9 @@ class ReserveViewModel : ViewModel() {
 
                                         val fecha="03/03/22"
                                      saverReserve(email, fecha, itiId, quantity,idRoute)
+                                        if (itiId != null) {
+                                            updateItinerary(itineraryServer,hour,quantity)
+                                        }
                                     }
                                 }
                             }
@@ -66,6 +69,15 @@ class ReserveViewModel : ViewModel() {
             }
         }
     }
+
+    private fun updateItinerary(itiId: ItineraryServer, hour:String, quantity: String) {
+        var quantityInt=Integer.parseInt(quantity)
+        userServerRepository.updateItinerary(itiId,hour,quantityInt)
+
+
+
+    }
+
     private fun saverReserve(
         email: String,
         fecha: String,
@@ -73,9 +85,10 @@ class ReserveViewModel : ViewModel() {
         quantity: String,
         idRoute: String?
     ) {
+        var quantityInt=Integer.parseInt(quantity)
 
             if (itiId != null) {
-                userServerRepository.saveReserve(email,fecha, itiId,quantity,idRoute)
+                userServerRepository.saveReserve(email,fecha, itiId,quantityInt,idRoute)
 
         }
 
@@ -83,5 +96,9 @@ class ReserveViewModel : ViewModel() {
 
     fun showSeatAvailable(hour: String) {
 message.value="revise el horario,$hour"
+    }
+
+    fun enviarMensaje() {
+        message.value="Escoge una ruta por favor "
     }
 }

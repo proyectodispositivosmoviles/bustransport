@@ -8,6 +8,7 @@ import com.google.firebase.firestore.SetOptions
 import com.google.firebase.firestore.auth.User
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import com.ricaurte.bustransport.server.ItineraryServer
 import com.ricaurte.bustransport.server.ReserveServer
 import com.ricaurte.bustransport.server.RouteServer
 import com.ricaurte.bustransport.server.UserServer
@@ -79,13 +80,12 @@ class UserServerRepository {
         email: String,
         fecha: String,
         id: String,
-        quantity: String,
+        quantity: Int,
         idRoute: String?,
 
         ) {
         val documentReserve = db.collection("reserves").document()
-        var quantity=Integer.parseInt(quantity)
-        val route = ReserveServer(
+            val reserve = ReserveServer(
             rid =idRoute,
             idItinerary= id,
             idReserve = documentReserve.id,
@@ -93,7 +93,29 @@ class UserServerRepository {
             reserveDate = fecha,
            quantity = quantity,
             )
-        db.collection("reserves").document(documentReserve.id).set(route)
+        db.collection("reserves").document(documentReserve.id).set(reserve)
+
+    }
+
+    fun updateItinerary(itinerary: ItineraryServer, hour: String, quantityInt: Int) {
+       var current=itinerary.availableSeat
+        val documentItinerary = db.collection("itinerary").document()
+
+         if (current != null) {
+             current=current-quantityInt
+            val itineraryUpdatede=ItineraryServer(
+                availableSeat=10,
+                carNumber=itinerary.carNumber,
+                departureDate=itinerary.departureDate,
+                departureTime=itinerary.departureTime,
+                id=itinerary.id,
+                idRoute=itinerary.idRoute
+            )
+             db.collection("itinerary").document().update("availableSeat",10) //update("$id/availableSeat",current)
+
+        }
+
+
 
     }
 
